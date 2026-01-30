@@ -1,0 +1,302 @@
+﻿@using Apino.Application.Dtos.Shop
+@model Apino.Application.Dtos.Shop.ShopPageViewModel
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="HTML5,CSS3,HTML,Template,multi-page,Evolta - AI Chat Bot Startups Template">
+    <meta name="description" content="Evolta - AI Chat Bot Startups Template">
+    <meta name="author" content="Barat Hadian">
+
+    @Html.Partial("_Heads")
+    <title>@ViewData["Title"] - آپینو،در کنار هم، به صرف قهوه، بازی، کار و معاشرت</title>
+
+
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+
+<body>
+    <!-- Dark/Light Toggle -->
+    <div class="dark-version">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <!-- Start Preloader Area -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+    <!-- Start Navbar Area -->
+    <div class="navbar-area navbar-style-two">
+        <div class="evolta-responsive-nav">
+            <div class="container">
+                <div class="evolta-responsive-menu">
+                    <div class="logo black-logo">
+                        <a href="/Home">
+                            <img src="assets/img/black-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="logo white-logo">
+                        <a href="/Home">
+                            <img src="assets/img/white-logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="evolta-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand black-logo" href="/Home">
+                        <img src="assets/img/black-logo.png" alt="logo">
+                    </a>
+                    <a class="navbar-brand white-logo" href="/Home">
+                        <img src="assets/img/white-logo.png" alt="logo">
+                    </a>
+
+
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        @await Component.InvokeAsync("TopMenu")
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+    <!-- Start Page Title Area -->
+    <div class="page-title-area">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>فروشگاه</h2>
+                <ul>
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li>فروشگاه</li>
+                    <li>نام شاخه</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="shape18"><img src="assets/img/shape/dot1.png" alt="image"></div>
+        <div class="shape19"><img src="assets/img/shape/dot2.png" alt="image"></div>
+        <div class="shape20"><img src="assets/img/shape/dot3.png" alt="image"></div>
+        <div class="shape21"><img src="assets/img/shape/dot4.png" alt="image"></div>
+        <div class="shape22"><img src="assets/img/shape/dot5.png" alt="image"></div>
+        <div class="shape23"><img src="assets/img/shape/dot6.png" alt="image"></div>
+    </div>
+    <!-- End Page Title Area -->
+    <!-- Start Shop Area -->
+    <!-- Shop Area -->
+    <section class="shop-area ptb-110">
+        <div class="container">
+
+            <!-- ================= Desktop Category Menu ================= -->
+            <div class="shop-category-menu mb-4 d-none d-md-block">
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        <div class="btn-group flex-wrap gap-2" role="group" aria-label="Category Menu">
+                            <button class="btn btn-outline-primary category-btn @(Model.CategoryId == null ? "active" : "")"
+                                    data-category="">
+                                همه
+                            </button>
+
+                            @foreach (var cat in Model.Categories)
+                            {
+                                <button class="btn btn-outline-primary category-btn @(Model.CategoryId == cat.Id ? "active" : "")"
+                                        data-category="@cat.Id.ToString()">
+                                    @cat.Title
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= Product List + Mobile Category ================= -->
+            <div id="product-list">
+
+                <!-- Mobile Category Dropdown (ONLY mobile) -->
+                <div class="shop-category-menu d-md-none mb-3">
+                    <select class="form-select mobile-category-select">
+                        <option value="">همه دسته‌ها</option>
+                        @foreach (var cat in Model.Categories)
+                        {
+                            @if (Model.CategoryId == cat.Id)
+                            {
+                                <option value="@cat.Id" selected="selected">@cat.Title</option>
+                            }
+                            else
+                            {
+                                <option value="@cat.Id">@cat.Title</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <!-- Products -->
+                <div class="row g-4">
+                    @if (Model.Products != null && Model.Products.Count > 0)
+                    {
+                        foreach (var item in Model.Products)
+                        {
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                                <div class="card h-100 shadow-sm border-0">
+
+                                    <div class="ratio ratio-4x3">
+                                        <img src="/images/products/@item.ImageUrl"
+                                             class="card-img-top img-fluid"
+                                             alt="@item.Title"
+                                             onerror="this.src='/images/no-image.png'" />
+                                    </div>
+
+                                    <div class="card-body d-flex flex-column">
+
+                                        <h6 class="card-title text-truncate" title="@item.Title">
+                                            @item.Title
+                                        </h6>
+
+                                        <div class="mb-2">
+                                            <span class="fw-bold text-success">
+                                                @item.Price.ToString("N0") تومان
+                                            </span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            @if (item.Stock > 0)
+                                            {
+                                                <span class="badge bg-success">
+                                                    موجودی: @item.Stock
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-danger">
+                                                    ناموجود
+                                                </span>
+                                            }
+                                        </div>
+
+                                        <div class="mt-auto">
+                                            <button class="btn btn-primary w-100 add-to-cart-btn"
+                                                    data-id="@item.Id"
+                                                    data-stock="@item.Stock"
+                                                    data-payatplace="@item.PayAtPlace"
+                                                    data-branch-id="@Model.BranchId"
+                                                    @(item.Stock <= 0 ? "disabled" : "")>
+                                                <i class="bi bi-cart-plus ms-1"></i>
+                                                رزرو / افزودن به سبد
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-12 text-center py-5">
+                            <div class="alert alert-warning">
+                                محصولی برای نمایش وجود ندارد
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+
+
+            <!-- Top Bar -->
+            <div class="woocommerce-topbar mb-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <p>
+                            نمایش
+                            @((Model.CurrentPage - 1) * 9 + 1)
+                            -
+                            @(Math.Min(Model.CurrentPage * 9, Model.TotalCount))
+                            از
+                            @Model.TotalCount
+                            نتیجه
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products -->
+            <!-- Pagination -->
+            @if (Model.TotalPages > 1)
+            {
+                <div class="pagination-area text-center mt-4">
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <a class="page-numbers @(i == Model.CurrentPage ? "current" : "")"
+                           href="/shop?branchId=@Model.BranchId&categoryId=@Model.CategoryId&page=@i">
+                            @i
+                        </a>
+                    }
+                </div>
+            }
+
+        </div>
+    </section>
+    <!-- End Shop Area -->
+    <!-- Start Footer Area -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                @Html.Partial("FooterMenue");
+
+            </div>
+        </div>
+
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <p>کپی رایت © 1403. تمام حقوق محفوظ است. طراحی توسط <a href="#" target="_blank">Barat Hadian</a></p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط و ضوابط</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="circle-map"><img src="assets/img/circle-map.png" alt="image"></div>
+
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <div class="go-top"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i></div>
+    @Html.Partial("_FooterCodes")
+    @Html.Partial("_Login")
+
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/sweetalert2@11.js" asp-append-version="true"></script>
+    <script src="~/js/auth.js" asp-append-version="true"></script>
+    <script src="~/js/shop.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\cart\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\cart\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\cart\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\cart\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\views\\shared\\components\\topmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\views\\shared\\components\\topmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\wwwroot\\js\\shop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\wwwroot\\js\\shop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "Apino.Web\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "Apino.Web\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAUwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-30T14:39:50.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\CartService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\Cart\\CartService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\CartService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\Cart\\CartService.cs",
+              "ViewState": "AgIAANwAAAAAAAAAAIAwwOgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T14:38:27.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Apino.Web\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Apino.Web\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAowGwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-30T14:34:06.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
+              "RelativeDocumentMoniker": "Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
+              "RelativeToolTip": "Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAYwCIAAACJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-30T14:33:44.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ICartService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\ICartService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\Cart\\ICartService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\ICartService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\Cart\\ICartService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T14:30:10.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "shop.js",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\shop.js",
+              "RelativeDocumentMoniker": "Apino.Web\\wwwroot\\js\\shop.js",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\shop.js",
+              "RelativeToolTip": "Apino.Web\\wwwroot\\js\\shop.js",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAtwM0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-30T14:25:45.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Apino.Web\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Apino.Web\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAApwA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T22:13:37.182Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

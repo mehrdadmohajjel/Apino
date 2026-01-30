@@ -1,0 +1,53 @@
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.deps.json
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.AssemblyReference.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfoInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfo.cs
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\refint\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\ref\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.deps.json
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\refint\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\ref\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.deps.json
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.AssemblyReference.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfoInputs.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfo.cs
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\refint\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Domain\obj\Debug\net8.0\ref\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.deps.json
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\refint\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\ref\Apino.Domain.dll

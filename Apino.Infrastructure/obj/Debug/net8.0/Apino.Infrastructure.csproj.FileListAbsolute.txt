@@ -1,0 +1,81 @@
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.deps.json
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.runtimeconfig.json
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfo.cs
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.In.54124E4D.Up2Date
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\refint\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.genruntimeconfig.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\ref\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.deps.json
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.runtimeconfig.json
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.In.54124E4D.Up2Date
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\refint\Apino.Infrastructure.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.genruntimeconfig.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\ref\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.deps.json
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.runtimeconfig.json
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfo.cs
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.In.54124E4D.Up2Date
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\refint\Apino.Infrastructure.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.genruntimeconfig.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\ref\Apino.Infrastructure.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.deps.json
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.runtimeconfig.json
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.In.54124E4D.Up2Date
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\refint\Apino.Infrastructure.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.genruntimeconfig.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\ref\Apino.Infrastructure.dll

@@ -1,0 +1,145 @@
+﻿@model Apino.Application.Dtos.Cart.CartViewModel
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @Html.Partial("_Heads")
+    <title>سبد خرید - آپینو</title>
+</head>
+
+<body>
+
+    <div class="navbar-area navbar-style-two">
+        <div class="evolta-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="/Home">
+                        <img src="/assets/img/black-logo.png" alt="logo">
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu">
+                        @await Component.InvokeAsync("TopMenu")
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-title-area">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>سبد خرید</h2>
+                <ul>
+                    <li><a href="/Home">خانه</a></li>
+                    <li>سبد خرید</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="cart-area ptb-110">
+        <div class="container">
+
+            @if (Model.Items == null || !Model.Items.Any())
+            {
+                <div class="alert alert-warning text-center">
+                    سبد خرید شما خالی است
+                </div>
+                <div class="text-center mt-4">
+                    <a href="/shop" class="btn btn-primary">بازگشت به فروشگاه</a>
+                </div>
+            }
+            else
+            {
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>محصول</th>
+                                <th>نام کالا</th>
+                                <th>قیمت واحد</th>
+                                <th>تعداد</th>
+                                <th>مجموع</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Items)
+                            {
+                                <tr>
+                                    <td class="product-thumbnail">
+                                        <img src="/images/products/@item.ImageName"
+                                             style="width:80px"
+                                             onerror="this.src='/images/no-image.png'" />
+                                    </td>
+
+                                    <td class="product-name">
+                                        @item.Title
+                                    </td>
+
+                                    <td class="product-price">
+                                        @item.Price.ToString("N0") تومان
+                                    </td>
+
+                                    <td class="product-quantity">
+                                        @item.Quantity
+                                    </td>
+
+                                    <td class="product-subtotal">
+                                        @item.Total.ToString("N0") تومان
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row justify-content-end mt-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="cart-totals">
+                            <h3>جمع فاکتور</h3>
+                            <ul>
+                                <li>
+                                    جمع جزء
+                                    <span>@Model.SubTotal.ToString("N0") تومان</span>
+                                </li>
+                                <li>
+                                    مالیات (@Model.TaxPercent٪)
+                                    <span>@Model.TaxAmount.ToString("N0") تومان</span>
+                                </li>
+                                <li class="fw-bold">
+                                    مبلغ نهایی
+                                    <span>@Model.GrandTotal.ToString("N0") تومان</span>
+                                </li>
+                            </ul>
+
+                            <form method="post" action="/cart/checkout">
+                                <input type="hidden" name="branchId" value="@Model.BranchId" />
+                                <button type="submit" class="btn btn-primary w-100 mt-3">
+                                    ادامه سفارش و پرداخت
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section>
+
+    <footer class="footer-area">
+        <div class="container">
+            @Html.Partial("FooterMenue")
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/sweetalert2@11.js"></script>
+    <script src="~/js/auth.js"></script>
+    <script src="~/js/site.js"></script>
+
+</body>
+</html>

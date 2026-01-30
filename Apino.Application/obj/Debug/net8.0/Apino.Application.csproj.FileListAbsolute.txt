@@ -1,0 +1,72 @@
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.deps.json
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.CoreCompileInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\refint\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\ref\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.deps.json
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.AssemblyReference.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfoInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfo.cs
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\refint\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\ref\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Ap.34AC7473.Up2Date
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.deps.json
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.CoreCompileInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Ap.34AC7473.Up2Date
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\refint\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\New Apino\Apino\Apino.Application\obj\Debug\net8.0\ref\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.deps.json
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.AssemblyReference.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfoInputs.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfo.cs
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.CoreCompileInputs.cache
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Ap.34AC7473.Up2Date
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\refint\Apino.Application.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.pdb
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\ref\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.deps.json
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.AssemblyReference.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfoInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.AssemblyInfo.cs
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.csproj.CoreCompileInputs.cache
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Ap.34AC7473.Up2Date
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\refint\Apino.Application.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\ref\Apino.Application.dll

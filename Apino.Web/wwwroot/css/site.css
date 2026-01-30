@@ -1,0 +1,12 @@
+﻿.shop-category-menu .btn {
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+}
+
+    .shop-category-menu .btn:hover {
+        transform: translateY(-1px);
+    }
+
+    .shop-category-menu .btn.active {
+        color: #fff;
+    }
