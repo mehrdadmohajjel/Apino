@@ -64,6 +64,7 @@
                                 <th>قیمت واحد</th>
                                 <th>تعداد</th>
                                 <th>مجموع</th>
+                                <th>حذف</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,8 +89,18 @@
                                         @item.Quantity
                                     </td>
 
-                                    <td class="product-subtotal">
-                                        @item.Total.ToString("N0") تومان
+                                    <td class="product-quantity">
+                                        <div class="input-counter" data-id="@item.ProductId">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary qty-minus">-</button>
+                                            <span class="mx-2 qty-value">@item.Quantity</span>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary qty-plus">+</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger remove-item"
+                                                data-id="@item.ProductId">
+                                            حذف
+                                        </button>
                                     </td>
                                 </tr>
                             }
@@ -140,6 +151,8 @@
     <script src="~/lib/sweetalert2@11.js"></script>
     <script src="~/js/auth.js"></script>
     <script src="~/js/site.js"></script>
+    <script src="~/js/cart.js"></script>
+
 
 </body>
 </html>

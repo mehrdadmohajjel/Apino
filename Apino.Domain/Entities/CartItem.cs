@@ -13,7 +13,7 @@ namespace Apino.Domain.Entities
         public long ProductId { get; set; }
 
         public int Quantity { get; set; }
-
+        public decimal Price { get; set; }
         // از ProductCategory می‌آید
         public bool PayAtPlace { get; set; }
 

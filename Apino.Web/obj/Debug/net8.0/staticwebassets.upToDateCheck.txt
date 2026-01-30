@@ -156,6 +156,7 @@ wwwroot\images\products\omlet.jpg
 wwwroot\images\products\Safran-Drink.jpg
 wwwroot\images\products\Tramiso-Shake.jpg
 wwwroot\js\auth.js
+wwwroot\js\cart.js
 wwwroot\js\common.js
 wwwroot\js\shop.js
 wwwroot\js\site - Copy.js

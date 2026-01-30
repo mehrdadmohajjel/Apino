@@ -10,9 +10,29 @@ let currentCategory = null;
 
 // ==============================
 // Update Cart Badge
-function updateCartBadge(count) {
-    $('#cart-count').text(count || 0);
+function updateCartBadge(newCount) {
+
+    const badge = $('#cart-count');
+    const oldCount = parseInt(badge.text()) || 0;
+
+    if (newCount <= 0) {
+        badge.fadeOut(150);
+        localStorage.setItem('cartCount', 0);
+        return;
+    }
+
+    badge.text(newCount).fadeIn(150);
+
+    // 🔔 فقط اگر عدد تغییر کرده → انیمیشن
+    if (newCount !== oldCount) {
+        badge.removeClass('bump'); // reset
+        void badge[0].offsetWidth; // force reflow
+        badge.addClass('bump');
+    }
+
+    localStorage.setItem('cartCount', newCount);
 }
+
 
 // Load initial cart count from server or localStorage
 let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;

@@ -16,7 +16,9 @@ namespace Apino.Application.Services.Cart
         Task ClearAsync(long cartId);
         Task<CartViewModel> GetCartAsync(long userId);
         Task<int> GetCartItemCountAsync(long userId);
-
+        Task UpdateQuantityAsync(long userId, long productId, int quantity);
+        Task RemoveAsync(long userId, long productId);
+        Task<int> GetCartCountAsync(long userId);
 
     }
 }

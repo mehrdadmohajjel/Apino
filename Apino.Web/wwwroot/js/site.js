@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    loadCartCount();
 
     const $branchProducts = $("#branch-products");
     const $branchProductsRow = $("#branch-products .row");
@@ -107,9 +108,76 @@ $(function () {
         }
     });
 });
-function updateCartBadge(count) {
-    $('#cart-count').text(count || 0);
+function updateCartBadge(newCount) {
+
+    const badge = $('#cart-count');
+    const oldCount = parseInt(badge.text()) || 0;
+
+    if (newCount <= 0) {
+        badge.fadeOut(150);
+        localStorage.setItem('cartCount', 0);
+        return;
+    }
+
+    badge.text(newCount).fadeIn(150);
+
+    // 🔔 فقط اگر عدد تغییر کرده → انیمیشن
+    if (newCount !== oldCount) {
+        badge.removeClass('bump'); // reset
+        void badge[0].offsetWidth; // force reflow
+        badge.addClass('bump');
+    }
+
+    localStorage.setItem('cartCount', newCount);
 }
+
+
+
+async function loadCartCount() {
+
+    const token = localStorage.getItem('accessToken');
+    if (!token) {
+        $('#cart-count').hide();
+        return;
+    }
+
+    try {
+        const res = await fetch('/cart/count', {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        });
+
+        if (!res.ok) return;
+
+        const data = await res.json();
+
+        if (data.count > 0) {
+            $('#cart-count').text(data.count).show();
+        } else {
+            $('#cart-count').hide();
+        }
+
+        localStorage.setItem('cartCount', data.count);
+
+    } catch (e) {
+        console.error('Cart count error', e);
+    }
+}
+$('#cart-link').on('click', function () {
+
+    const token = localStorage.getItem('accessToken');
+
+    if (!token) {
+        // کاربر لاگین نیست
+        openLoginModal(); // OTP
+        return;
+    }
+
+    // لاگین است → برو به cart
+    window.location.href = '/cart';
+});
+
 
 //$('#branch-products').on('click', '.category-box', function () {
 //    var categoryId = $(this).data('id');

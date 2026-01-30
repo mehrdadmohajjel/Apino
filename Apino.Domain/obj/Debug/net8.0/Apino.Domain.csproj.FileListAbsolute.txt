@@ -51,3 +51,4 @@ C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Api
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\refint\Apino.Domain.dll
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.pdb
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\ref\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Domain\obj\Debug\net8.0\Apino.Domain.sourcelink.json

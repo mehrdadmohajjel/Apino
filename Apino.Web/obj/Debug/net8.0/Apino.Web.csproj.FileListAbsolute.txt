@@ -780,3 +780,4 @@ C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\static
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\Apino.Web.csproj.Up2Date
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\Apino.Web.genruntimeconfig.cache
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\ref\Apino.Web.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\Apino.Web.sourcelink.json

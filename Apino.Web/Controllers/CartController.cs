@@ -81,10 +81,11 @@ namespace Apino.Web.Controllers
         // ===============================
         // Cart Page
         // ===============================
-        [Authorize]
         [HttpGet("")]
         public async Task<IActionResult> Index()
         {
+            if (!User.Identity.IsAuthenticated)
+                return Redirect("/auth/login");
             var userId = long.Parse(
                 User.FindFirst(ClaimTypes.NameIdentifier)?.Value
                 ?? User.FindFirst("sub")!.Value
@@ -128,6 +129,43 @@ namespace Apino.Web.Controllers
             var orderId = await _orderService.CreateFromCartAsync(userId, branchId);
 
             return RedirectToAction("Pay", "Payment", new { orderId });
+        }
+        [Authorize]
+        [HttpPost("remove")]
+        public async Task<IActionResult> Remove([FromBody] RemoveCartItemRequest req)
+        {
+            var userId = long.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            await _cartService.RemoveAsync(userId, req.ProductId);
+
+            var count = await _cartService.GetCartCountAsync(userId);
+
+            return Ok(new { count });
+        }
+        [Authorize]
+        [HttpPost("update-qty")]
+        public async Task<IActionResult> UpdateQuantity([FromBody] UpdateCartQtyRequest req)
+        {
+            if (req.Quantity < 1)
+                return BadRequest(new { message = "تعداد نامعتبر است" });
+
+            var userId = long.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            await _cartService.UpdateQuantityAsync(userId, req.ProductId, req.Quantity);
+
+            var cart = await _cartService.GetCartAsync(userId);
+
+            return Ok(new
+            {
+                count = cart.Items.Sum(x => x.Quantity),
+                itemTotal = cart.Items
+                    .Where(x => x.ProductId == req.ProductId)
+                    .Select(x => x.Quantity * x.Price)
+                    .FirstOrDefault(),
+                subTotal = cart.Items.Sum(x => x.Price * x.Quantity),
+                taxAmount = cart.TaxAmount,
+                grandTotal = cart.GrandTotal
+            });
         }
     }
 

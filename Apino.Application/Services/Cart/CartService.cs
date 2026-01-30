@@ -231,6 +231,51 @@ namespace Apino.Application.Services.Cart
                 .Where(x => x.Cart.UserId == userId)
                 .SumAsync(x => x.Quantity);
         }
+        public async Task RemoveAsync(long userId, long productId)
+        {
+            var cart = await _db.Carts
+                .Include(x => x.Items)
+                .FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (cart == null) return;
+
+            var item = cart.Items.FirstOrDefault(x => x.ProductId == productId);
+            if (item == null) return;
+
+            _db.CartItems.Remove(item);
+            await _db.SaveChangesAsync();
+        }
+        public async Task UpdateQuantityAsync(long userId, long productId, int quantity)
+        {
+            var cart = await _db.Carts
+                .Include(x => x.Items)
+                .FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (cart == null)
+                throw new Exception("سبد خرید یافت نشد");
+
+            var item = cart.Items.FirstOrDefault(x => x.ProductId == productId);
+
+            if (item == null)
+                throw new Exception("آیتم یافت نشد");
+
+            if (quantity <= 0)
+            {
+                _db.CartItems.Remove(item);
+            }
+            else
+            {
+                item.Quantity = quantity;
+            }
+            await _db.SaveChangesAsync();
+        }
+        public async Task<int> GetCartCountAsync(long userId)
+        {
+            return await _db.CartItems
+                .Where(x => x.Cart.UserId == userId)
+                .SumAsync(x => x.Quantity);
+        }
+
 
     }
 

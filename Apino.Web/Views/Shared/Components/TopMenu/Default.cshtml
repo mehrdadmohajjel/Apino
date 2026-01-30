@@ -29,11 +29,19 @@
 
 <!-- بخش ثابت سبد خرید و دیگر امکانات -->
 <div class="others-options">
-    <a href="/cart" class="cart-btn"><i class="flaticon-shopping-basket"></i></a>
-    <a href="/cart" class="btn btn-outline-primary position-relative">
+    <a href="javascript:void(0)" id="cart-link" class="cart-btn position-relative">
+        <i class="flaticon-shopping-basket"></i>
+
+        <span id="cart-count"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              style="font-size:11px; display:none;">
+            0
+        </span>
+    </a>   
+    @* <a href="/cart" class="btn btn-outline-primary position-relative">
         سبد خرید
         <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-loaded="false">
             0
         </span>
-    </a>
+    </a> *@
 </div>
