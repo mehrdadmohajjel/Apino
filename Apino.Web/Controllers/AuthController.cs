@@ -4,9 +4,12 @@ using Apino.Application.Services.Auth;
 using Apino.Domain.Entities;
 using Apino.Domain.Enums;
 using Apino.Infrastructure.Data;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Apino.Web.Controllers
 {
@@ -48,83 +51,66 @@ namespace Apino.Web.Controllers
             }
         }
 
-
         [HttpPost("verify-otp")]
         public async Task<IActionResult> VerifyOtp([FromBody] VerifyOtpRequest request)
         {
-            try
+            // 1. اعتبارسنجی OTP
+            await _otpService.VerifyAsync(request.Mobile, request.Code);
+
+            // 2. پیدا / ساخت کاربر
+            var user = await _db.Users
+                .Include(x => x.UserProfile)
+                .FirstOrDefaultAsync(x => x.Mobile == request.Mobile);
+
+            if (user == null)
             {
-                // بررسی OTP
-                await _otpService.VerifyAsync(request.Mobile, request.Code);
-
-                // بررسی اینکه کاربر وجود دارد یا نه
-                var user = _db.Users.FirstOrDefault(u => u.Mobile == request.Mobile);
-                if (user == null)
+                user = new User
                 {
-                    // Guest → Auto Register
-                    user = new User
-                    {
-                        Mobile = request.Mobile,
-                        IsActive = true,
-                        Role = UserRole.User,
-                        CreationDatetime = DateTime.UtcNow
-                    };
-                    _db.Users.Add(user);
-                    await _db.SaveChangesAsync();
-
-                    // ساخت پروفایل خالی
-                    _db.UserProfiles.Add(new UserProfile
-                    {
-                        UserId = user.Id,
-                        IsProfileCompleted = false,
-                        CreationDateTime = DateTime.UtcNow
-                    });
-                    await _db.SaveChangesAsync();
-                }
-
-                // JWT + Refresh Token
-                var accessToken = _tokenService.GenerateAccessToken(user);
-                var refreshToken = _tokenService.GenerateRefreshToken();
-
-                // ذخیره Refresh Token در DB
-                _db.UserTokens.Add(new UserToken
-                {
-                    UserId = user.Id,
-                    RefreshToken = refreshToken,
-                    ExpireAt = DateTime.UtcNow.AddDays(30),
-                    CreationDateTime = DateTime.UtcNow,
-                    IsRevoked = false,
-                    RevokedAt = null
-                });
+                    Mobile = request.Mobile,
+                    Role = UserRole.User,
+                    IsActive = true,
+                    CreationDatetime = DateTime.UtcNow
+                };
+                _db.Users.Add(user);
                 await _db.SaveChangesAsync();
-                // 🟢 Merge Guest Cart
-                //var guestItemsJson = request.GuestCartJson; // JSON array [{productId, branchId, qty, payAtPlace}]
-                //if (!string.IsNullOrEmpty(guestItemsJson))
-                //{
-                //    var guestItems = JsonSerializer.Deserialize<List<GuestCartItem>>(guestItemsJson);
-                //    if (guestItems != null && guestItems.Count > 0)
-                //    {
-                //        foreach (var item in guestItems)
-                //        {
-                //            await _cartService.AddAsync(user.Id, item.BranchId, item.ProductId, item.Qty);
-                //        }
-                //    }
-                //}
-                return Ok(new
-                {
-                    accessToken,
-                    refreshToken,
-                    profileCompleted = user.UserProfile?.IsProfileCompleted ?? false
-                });
             }
-            catch (Exception ex)
-            {
-                // می‌توانید اینجا لاگ هم کنید
-                _logger.LogError(ex, "خطا در VerifyOtp");
 
-                return BadRequest(new { message = "عملیات ناموفق بود، لطفا دوباره تلاش کنید" });
-            }
+            // 3. JWT (برای Ajax)
+            var accessToken = _tokenService.GenerateAccessToken(user);
+
+            // 4. 🔥 COOKIE SIGN-IN (SYNC)
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.MobilePhone, user.Mobile),
+        new Claim(ClaimTypes.Role, user.Role.ToString())
+    };
+
+            var identity = new ClaimsIdentity(
+                claims,
+                CookieAuthenticationDefaults.AuthenticationScheme
+            );
+
+            var principal = new ClaimsPrincipal(identity);
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                principal,
+                new AuthenticationProperties
+                {
+                    IsPersistent = true,
+                    ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7)
+                }
+            );
+
+            return Ok(new
+            {
+                accessToken,
+                profileCompleted = user.UserProfile?.IsProfileCompleted ?? false
+            });
         }
+
+
 
         [HttpPost("logout")]
         public async Task<IActionResult> Logout([FromBody] LogoutRequest request)
