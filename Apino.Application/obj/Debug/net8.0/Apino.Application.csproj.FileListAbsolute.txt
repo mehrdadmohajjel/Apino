@@ -72,3 +72,7 @@ C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\ref\Apino.Application.dll
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.sourcelink.json
 C:\Users\golshan\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.sourcelink.json
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.dll
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\bin\Debug\net8.0\Apino.Domain.pdb
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Application.sourcelink.json
+C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino.Application\obj\Debug\net8.0\Apino.Ap.34AC7473.Up2Date

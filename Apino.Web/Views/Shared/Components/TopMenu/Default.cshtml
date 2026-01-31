@@ -38,6 +38,49 @@
             0
         </span>
     </a>   
+    <a href="javascript:void(0)"
+       id="notif-link"
+       class="position-relative me-3"
+       data-bs-toggle="dropdown">
+        <i class="far fa-bell"></i>
+
+        @if (Model.UnreadNotifications > 0)
+        {
+            <span class="position-absolute top-0 start-100 translate-middle
+                         badge rounded-pill bg-danger notif-badge">
+                @Model.UnreadNotifications
+            </span>
+        }
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-end notif-dropdown">
+        @if (!Model.LastNotifications.Any())
+        {
+            <li class="dropdown-item text-muted text-center">
+                اعلان جدیدی ندارید
+            </li>
+        }
+        else
+        {
+            @foreach (var n in Model.LastNotifications)
+            {
+                <li>
+                    <a href="#" class="dropdown-item small @(n.IsRead ? "" : "fw-bold")">
+                        <div>@n.Title</div>
+                        <div class="text-muted small">@n.Message</div>
+                    </a>
+                </li>
+            }
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li>
+                <a href="/notifications" class="dropdown-item text-center text-primary">
+                    مشاهده همه اعلان‌ها
+                </a>
+            </li>
+        }
+    </ul>
     @* <a href="/cart" class="btn btn-outline-primary position-relative">
         سبد خرید
         <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-loaded="false">

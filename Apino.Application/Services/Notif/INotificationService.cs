@@ -1,4 +1,5 @@
-﻿using Apino.Domain.Entities;
+﻿using Apino.Application.Dtos.Notification;
+using Apino.Domain.Entities;
 using Apino.Domain.Enums;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,18 @@ namespace Apino.Application.Services.Notif
             long? branchId = null
         );
 
-        Task<List<Notification>> GetUserNotifications(long userId);
-
+        IQueryable<Notification> GetUserNotifications(long userId);
         Task<List<Notification>> GetBranchNotifications(long branchId);
 
-        Task<List<Notification>> GetAllAsync();
+        Task<int> GetUnreadCountAsync(long userId);
+
+        Task<List<Notification>> GetLastUnreadAsync(long userId, int take = 5);
+
+        Task<List<Notification>> GetAllAsync(long userId);
+
+        Task MarkAllAsReadAsync(long userId);
+        Task<NotificationListViewModel> GetPagedAsync(long userId, int page, int pageSize, string search,
+     bool? isRead);
+
     }
 }

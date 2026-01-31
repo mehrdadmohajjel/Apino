@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Apino.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dabeea737f67e850e8abe7d07c73d6448e5d09a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ac4740523af0ab3241d3738c94b9d38ec32a0ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("Apino.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Apino.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,194 @@
+﻿@using Apino.Application.Dtos.Notification
+@model NotificationListViewModel
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="HTML5,CSS3,HTML,Template,multi-page,Evolta - AI Chat Bot Startups Template">
+    <meta name="description" content="Evolta - AI Chat Bot Startups Template">
+    <meta name="author" content="Barat Hadian">
+
+    @Html.Partial("_Heads")
+    <title>@ViewData["Title"] - آپینو،در کنار هم، به صرف قهوه، بازی، کار و معاشرت</title>
+
+
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+
+<body>
+    <!-- Dark/Light Toggle -->
+    <div class="dark-version">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <!-- Start Preloader Area -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+    <!-- Start Navbar Area -->
+    <div class="navbar-area navbar-style-two">
+        <div class="evolta-responsive-nav">
+            <div class="container">
+                <div class="evolta-responsive-menu">
+                    <div class="logo black-logo">
+                        <a href="index.html">
+                            <img src="assets/img/black-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="logo white-logo">
+                        <a href="index.html">
+                            <img src="assets/img/white-logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="evolta-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand black-logo" href="index.html">
+                        <img src="assets/img/black-logo.png" alt="logo">
+                    </a>
+                    <a class="navbar-brand white-logo" href="index.html">
+                        <img src="assets/img/white-logo.png" alt="logo">
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        @await Component.InvokeAsync("TopMenu")
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+    <!-- Start Page Title Area -->
+    <div class="page-title-area">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>آخرین اعلان های دریافتی</h2>
+                <ul>
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li>اعلان ها</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="shape18"><img src="assets/img/shape/dot1.png" alt="image"></div>
+        <div class="shape19"><img src="assets/img/shape/dot2.png" alt="image"></div>
+        <div class="shape20"><img src="assets/img/shape/dot3.png" alt="image"></div>
+        <div class="shape21"><img src="assets/img/shape/dot4.png" alt="image"></div>
+        <div class="shape22"><img src="assets/img/shape/dot5.png" alt="image"></div>
+        <div class="shape23"><img src="assets/img/shape/dot6.png" alt="image"></div>
+    </div>
+    <!-- End Page Title Area -->
+    <!-- Start FAQs Area -->
+    <section class="faq-area ptb-110 bg-f4faff">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>لیست اعلان‌ها</h4>
+
+                <button id="mark-all-read"
+                        class="btn btn-outline-success btn-sm">
+                    همه را خواندم
+                </button>
+            </div>
+
+            <div class="row mb-4" id="notification-filters">
+
+                <div class="col-md-3">
+                    <select id="filter-isread" class="form-select">
+                        <option value="">همه اعلان‌ها</option>
+                        <option value="false">نخوانده</option>
+                        <option value="true">خوانده شده</option>
+                    </select>
+                </div>
+
+                <div class="col-md-5">
+                    <input type="text"
+                           id="filter-search"
+                           class="form-control"
+                           placeholder="جستجو در اعلان‌ها..." />
+                </div>
+
+                <div class="col-md-2">
+                    <button id="apply-filter" class="btn btn-primary w-100">
+                        اعمال
+                    </button>
+                </div>
+
+            </div>
+
+            <div id="notification-table-wrapper">
+                <!-- جدول اعلان‌ها با AJAX اینجا رندر می‌شود -->
+            </div>
+
+
+
+        </div>
+
+
+        <div class="shape1"><img src="assets/img/shape/1.svg" alt="image"></div>
+        <div class="shape2"><img src="assets/img/shape/2.svg" alt="image"></div>
+        <div class="shape3"><img src="assets/img/shape/4.png" alt="image"></div>
+        <div class="shape4"><img src="assets/img/shape/1.svg" alt="image"></div>
+        <div class="shape5"><img src="assets/img/shape/dot1.png" alt="image"></div>
+    </section>
+    <!-- End FAQs Area -->
+    <!-- Start Footer Area -->
+    <footer class="footer-area">
+        <div class="container">
+            @Html.Partial("FooterMenue");
+        </div>
+
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <p>کپی رایت © 1403. تمام حقوق محفوظ است. طراحی توسط <a href="#" target="_blank">Barat Hadian</a></p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط و ضوابط</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="circle-map"><img src="assets/img/circle-map.png" alt="image"></div>
+
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <div class="go-top"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i></div>
+    @Html.Partial("_FooterCodes")
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/sweetalert2@11.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/auth.js" asp-append-version="true"></script>
+    <script src="~/js/notification.js" asp-append-version="true"></script>
+    
+</body>
+</html>

@@ -10,8 +10,6 @@ namespace Apino.Domain.Enums
     {
         OrderPaid = 1,
         OrderCreated = 2,
-        OrderCancelled = 3,
-        System = 10
+        System = 99
     }
-
 }
