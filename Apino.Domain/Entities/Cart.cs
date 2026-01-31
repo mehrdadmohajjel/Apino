@@ -11,6 +11,7 @@ namespace Apino.Domain.Entities
     {
         public long UserId { get; set; }
         public long BranchId { get; set; }
+        public decimal Price { get; set; }
 
         // 🔴 اگر حتی یک آیتم Online-only باشد → true
         public bool OnlyOnlinePayment { get; set; }

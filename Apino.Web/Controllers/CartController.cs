@@ -37,21 +37,28 @@ namespace Apino.Web.Controllers
                 userId,
                 req.BranchId,
                 req.ProductId,
-                1
+                1,
+                req.Price
             );
 
             var count = await _cartService.GetCartItemCountAsync(userId);
 
             return Ok(new { count });
         }
+
+
         [Authorize]
         [HttpGet("count")]
         public async Task<IActionResult> Count()
         {
-            var userId = long.Parse(
-                User.FindFirst(ClaimTypes.NameIdentifier)?.Value
-                ?? User.FindFirst("sub")!.Value
-            );
+            var userIdClaim =
+                User.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
+                User.FindFirst("sub")?.Value;
+
+            if (userIdClaim == null)
+                return Unauthorized();
+
+            var userId = long.Parse(userIdClaim);
 
             var count = await _cartService.GetCartItemCountAsync(userId);
 
@@ -122,13 +129,20 @@ namespace Apino.Web.Controllers
 
         [Authorize]
         [HttpGet("checkout")]
-        public async Task<IActionResult> Checkout(long branchId)
+        public async Task<IActionResult> Checkout([FromBody] CheckoutRequest req)
         {
-            var userId = long.Parse(User.FindFirst("userId")!.Value);
+            if (!User.Identity.IsAuthenticated)
+                return Redirect("/auth/login");
+            var userId = long.Parse(
+                User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                ?? User.FindFirst("sub")!.Value
+            );
+            var orderId = await _orderService.CreateFromCartAsync(userId, req.BranchId);
 
-            var orderId = await _orderService.CreateFromCartAsync(userId, branchId);
-
-            return RedirectToAction("Pay", "Payment", new { orderId });
+            return Ok(new
+            {
+                redirectUrl = Url.Action("Pay", "Payment", new { orderId })
+            });
         }
         [Authorize]
         [HttpPost("remove")]
@@ -169,5 +183,5 @@ namespace Apino.Web.Controllers
         }
     }
 
-    public record AddToCartRequest(long ProductId, bool PayAtPlace ,long BranchId);
+    public record AddToCartRequest(long ProductId, bool PayAtPlace ,long BranchId,decimal Price);
 }

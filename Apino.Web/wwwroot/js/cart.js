@@ -13,6 +13,7 @@
     if (newQty < 1) return;
 
     // 🔥 Optimistic UI
+
     qtyEl.text(newQty);
 
     $.ajax({
@@ -82,3 +83,43 @@ $(document).on('click', '.remove-item', function () {
             });
     });
 });
+
+$('#btn-checkout').on('click', function (e) {
+    e.preventDefault();
+
+    const branchId = $(this).data('branch-id');
+    const token = localStorage.getItem('accessToken');
+
+    if (!token) {
+        openLoginModal(); // OTP
+        return;
+    }
+
+    Swal.fire({
+        title: 'در حال انتقال به پرداخت...',
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading()
+    });
+
+    $.ajax({
+        url: '/cart/checkout',
+        type: 'POST',
+        contentType: 'application/json',
+        headers: {
+            Authorization: 'Bearer ' + token
+        },
+        data: JSON.stringify({ branchId })
+    })
+        .done(res => {
+            // 👇 بک‌اند باید آدرس پرداخت رو برگردونه
+            window.location.href = res.redirectUrl;
+        })
+        .fail(xhr => {
+            Swal.close();
+            Toast.fire({
+                icon: 'error',
+                title: xhr.responseJSON?.message || 'خطا در شروع پرداخت'
+            });
+        });
+});
+

@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "_PaymentResultLayout";
+
+    ViewBag.Title = "خطا در اتصال به درگاه";
+    ViewBag.Heading = "خطا در ارتباط با درگاه بانکی ⚠️";
+    ViewBag.TitleClass = "text-warning";
+
+    ViewBag.Message = @"
+        در حال حاضر امکان اتصال به درگاه پرداخت وجود ندارد.<br/>
+        لطفاً چند دقیقه دیگر مجدداً تلاش کنید.
+    ";
+
+    ViewBag.ShowBackToHome = true;
+    ViewBag.AutoRedirect = false;
+}

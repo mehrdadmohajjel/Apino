@@ -143,6 +143,9 @@ namespace Apino.Infrastructure.Migrations
                     b.Property<bool>("OnlyOnlinePayment")
                         .HasColumnType("bit");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -246,8 +249,13 @@ namespace Apino.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PaymentTransactionCode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<decimal>("SubTotalAmount")
                         .HasColumnType("decimal(18,2)");
@@ -677,7 +685,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 1L,
                             BranchId = 1L,
                             CategoryTitle = "فضای کار اشتراکی",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4388),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3111),
                             IconName = "place.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -688,7 +696,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 2L,
                             BranchId = 1L,
                             CategoryTitle = "کافه",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4403),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3123),
                             IconName = "coffe.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -699,7 +707,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 3L,
                             BranchId = 1L,
                             CategoryTitle = "کافه خوردنی",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4405),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3124),
                             IconName = "coffe.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -710,7 +718,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 4L,
                             BranchId = 1L,
                             CategoryTitle = "نوشیدنی سرد",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4406),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3125),
                             IconName = "coffe.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -721,7 +729,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 5L,
                             BranchId = 1L,
                             CategoryTitle = "فروشگاه",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4408),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3127),
                             IconName = "shop.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -732,7 +740,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 6L,
                             BranchId = 1L,
                             CategoryTitle = "میز مطالعه عمومی",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4409),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3128),
                             IconName = "place.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -743,7 +751,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 7L,
                             BranchId = 1L,
                             CategoryTitle = "استودیو",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4411),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3129),
                             IconName = "studio.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -754,7 +762,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 8L,
                             BranchId = 1L,
                             CategoryTitle = "فضای کار اشتراکی",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4412),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3130),
                             IconName = "place.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -765,7 +773,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 9L,
                             BranchId = 2L,
                             CategoryTitle = "فضای کار اشتراکی",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4413),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3131),
                             IconName = "palce.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -776,7 +784,7 @@ namespace Apino.Infrastructure.Migrations
                             Id = 10L,
                             BranchId = 2L,
                             CategoryTitle = "کافه",
-                            CreationDateTime = new DateTime(2026, 1, 31, 0, 7, 6, 449, DateTimeKind.Local).AddTicks(4415),
+                            CreationDateTime = new DateTime(2026, 1, 31, 12, 27, 23, 748, DateTimeKind.Local).AddTicks(3133),
                             IconName = "coffe.png",
                             IsActive = true,
                             PayAtPlace = true,
@@ -856,7 +864,7 @@ namespace Apino.Infrastructure.Migrations
                         new
                         {
                             Id = 1L,
-                            CreationDatetime = new DateTime(2026, 1, 30, 20, 37, 6, 449, DateTimeKind.Utc).AddTicks(4508),
+                            CreationDatetime = new DateTime(2026, 1, 31, 8, 57, 23, 748, DateTimeKind.Utc).AddTicks(3192),
                             IsActive = true,
                             Mobile = "09143010428",
                             Role = 1
@@ -864,7 +872,7 @@ namespace Apino.Infrastructure.Migrations
                         new
                         {
                             Id = 2L,
-                            CreationDatetime = new DateTime(2026, 1, 30, 20, 37, 6, 449, DateTimeKind.Utc).AddTicks(4509),
+                            CreationDatetime = new DateTime(2026, 1, 31, 8, 57, 23, 748, DateTimeKind.Utc).AddTicks(3193),
                             IsActive = true,
                             Mobile = "09359719229",
                             Role = 2
@@ -872,7 +880,7 @@ namespace Apino.Infrastructure.Migrations
                         new
                         {
                             Id = 3L,
-                            CreationDatetime = new DateTime(2026, 1, 30, 20, 37, 6, 449, DateTimeKind.Utc).AddTicks(4510),
+                            CreationDatetime = new DateTime(2026, 1, 31, 8, 57, 23, 748, DateTimeKind.Utc).AddTicks(3194),
                             IsActive = true,
                             Mobile = "09121234567",
                             Role = 3
@@ -880,7 +888,7 @@ namespace Apino.Infrastructure.Migrations
                         new
                         {
                             Id = 4L,
-                            CreationDatetime = new DateTime(2026, 1, 30, 20, 37, 6, 449, DateTimeKind.Utc).AddTicks(4511),
+                            CreationDatetime = new DateTime(2026, 1, 31, 8, 57, 23, 748, DateTimeKind.Utc).AddTicks(3195),
                             IsActive = true,
                             Mobile = "09127654321",
                             Role = 3

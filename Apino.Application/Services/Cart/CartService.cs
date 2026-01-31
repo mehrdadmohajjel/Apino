@@ -1,4 +1,5 @@
-﻿using Apino.Application.Dtos;
+﻿using Apino.Application.Common.Exceptions;
+using Apino.Application.Dtos;
 using Apino.Application.Dtos.Cart;
 using Apino.Application.Interfaces;
 using Apino.Domain.Entities;
@@ -6,6 +7,7 @@ using Apino.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Globalization;
+using System.Linq;
 
 namespace Apino.Application.Services.Cart
 {
@@ -15,192 +17,168 @@ namespace Apino.Application.Services.Cart
         private readonly IToolsService _tools;
         private readonly IConfiguration _config;
 
-        public CartService(IReadDbContext db,IToolsService tools,IConfiguration config)
+        public CartService(
+            IReadDbContext db,
+            IToolsService tools,
+            IConfiguration config)
         {
             _db = db;
             _tools = tools;
             _config = config;
         }
 
-        public async Task<Apino.Domain.Entities.Cart> GetActiveCartAsync(long userId, long branchId)
+        // =========================================================
+        // 🛒 Add To Cart
+        // =========================================================
+        public async Task AddAsync(
+            long userId,
+            long branchId,
+            long productId,
+            int qty,
+            decimal price
+        )
         {
-            return await _db.Carts
-                .Include(c => c.Items)
-                .ThenInclude(i => i.Product)
-                .FirstOrDefaultAsync(c =>
-                    c.UserId == userId &&
-                    c.BranchId == branchId);
-        }
+            if (qty <= 0)
+                throw new ArgumentException("Quantity نامعتبر");
 
-        public async Task AddAsync(long userId, long branchId, long productId, int qty)
-        {
-            var product = await _db.Products
-                .Include(p => p.Category)
-                .FirstAsync(p => p.Id == productId);
+            using var tx = await (_db as DbContext)!.Database.BeginTransactionAsync();
 
-            var cart = await GetActiveCartAsync(userId, branchId);
+            // 🔒 گرفتن Draft با قفل
+            var order = await _db.Orders
+                .Include(o => o.OrderDetails)
+                .Where(o =>
+                    o.UserId == userId &&
+                    o.BranchId == branchId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                )
+                .FirstOrDefaultAsync();
 
-            if (cart == null)
+            if (order == null)
             {
-                cart = new Domain.Entities.Cart
+                order = new Domain.Entities.Order
                 {
                     UserId = userId,
                     BranchId = branchId,
-                    UpdatedAt = DateTime.UtcNow,
-                    OnlyOnlinePayment = false,
-                    Items = new List<CartItem>()
+                    OrderNumber = _tools.GenerateOrderNumber(),
+                    CreationDate = DateTime.UtcNow,
+                    CurrentStatusTypeId = (long)PaymentStatus.Draft,
+                    OrderDetails = new List<OrderDetail>()
                 };
-                _db.Carts.Add(cart);
+
+                _db.Orders.Add(order);
+                await _db.SaveChangesAsync();
             }
 
-            var item = cart.Items.FirstOrDefault(x => x.ProductId == productId);
+            var item = order.OrderDetails.FirstOrDefault(x => x.ProductId == productId);
 
             if (item == null)
             {
-                cart.Items.Add(new CartItem
+                order.OrderDetails.Add(new OrderDetail
                 {
                     ProductId = productId,
                     Quantity = qty,
-                    PayAtPlace = product.Category.PayAtPlace
+                    Price = price,              // 🔄 sync قیمت
+                    TotalPrice = price * qty
                 });
             }
             else
             {
                 item.Quantity += qty;
+                item.TotalPrice = item.Quantity * item.Price;
             }
 
-            // 🔴 قانون طلایی پرداخت
-            if (!product.Category.PayAtPlace)
-                cart.OnlyOnlinePayment = true;
-
-            cart.UpdatedAt = DateTime.UtcNow;
-
             await _db.SaveChangesAsync();
+            await tx.CommitAsync();
         }
 
-        public async Task ClearAsync(long cartId)
+
+
+        // =========================================================
+        // ➕ / ➖ Update Quantity
+        // =========================================================
+        public async Task UpdateQuantityAsync(long userId, long productId, int quantity)
         {
-            var cart = await _db.Carts
-                .Include(c => c.Items)
-                .FirstAsync(c => c.Id == cartId);
+            if (quantity < 0)
+                throw new Exception("تعداد نامعتبر");
 
-            _db.CartItems.RemoveRange(cart.Items);
-            _db.Carts.Remove(cart);
+            var order = await _db.Orders
+                .Include(o => o.OrderDetails)
+                .FirstOrDefaultAsync(o =>
+                    o.UserId == userId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
 
-            await _db.SaveChangesAsync();
-        }
+            if (order == null)
+                return;
 
-        public async Task MergeGuestAsync(long userId, List<GuestCartItem> items)
-        {
-            var branchId = items.First().BranchId;
+            var item = order.OrderDetails.FirstOrDefault(x => x.ProductId == productId);
+            if (item == null)
+                return;
 
-            // 1️⃣ گرفتن یا ایجاد Draft Order
-            var order = await GetOrCreateDraftOrder(userId, branchId);
-
-            bool allowPayAtPlace = true;
-
-            foreach (var item in items)
+            if (quantity == 0)
+                _db.OrderDetails.Remove(item);
+            else
             {
-                var product = await _db.Products
-                    .Include(p => p.Category)
-                    .FirstAsync(p => p.Id == item.ProductId);
-
-                if (!product.Category.PayAtPlace)
-                    allowPayAtPlace = false;
-
-                // Merge با جزئیات موجود یا اضافه کردن جدید
-                var detail = order.OrderDetails
-                    .FirstOrDefault(x => x.ProductId == item.ProductId);
-
-                if (detail == null)
-                {
-                    order.OrderDetails.Add(new OrderDetail
-                    {
-                        ProductId = item.ProductId,
-                        Quantity = item.Qty,
-                        Price = product.Price,
-                        TotalPrice = product.Price * item.Qty
-                    });
-                }
-                else
-                {
-                    detail.Quantity += item.Qty;
-                    detail.TotalPrice = detail.Price * detail.Quantity;
-                }
+                item.Quantity = quantity;
+                item.TotalPrice = item.Price * quantity;
             }
-
-            // 2️⃣ تعیین نوع پرداخت کل سفارش بر اساس PayAtPlace
-            var paymentType = allowPayAtPlace ? PaymentMethod.Cash : PaymentMethod.Online;
-
-            await SetOrderPaymentType(order, paymentType);
 
             await _db.SaveChangesAsync();
         }
 
-        private async Task<Apino.Domain.Entities.Order> GetOrCreateDraftOrder(long userId, long branchId)
+        // =========================================================
+        // ❌ Remove Item
+        // =========================================================
+        public async Task RemoveAsync(long userId, long productId)
         {
             var order = await _db.Orders
                 .Include(o => o.OrderDetails)
-                .Include(o => o.Statuses)
                 .FirstOrDefaultAsync(o =>
                     o.UserId == userId &&
-                    o.BranchId == branchId &&
-                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft);
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
 
-            if (order != null) return order;
+            if (order == null) return;
 
-            order = new Apino.Domain.Entities.Order
-            {
-                UserId = userId,
-                BranchId = branchId,
-                OrderNumber =_tools.GenerateOrderNumber(),
-                CreationDate = DateTime.UtcNow,
-                CurrentStatusTypeId = (long)PaymentStatus.Draft,
-                OrderDetails = new List<OrderDetail>(),
-                Statuses = new List<OrderStatus>
-        {
-            new OrderStatus
-            {
-                StatusTypeId =(long) PaymentStatus.Draft,
-                IsActive = true,
-                PaymentTypeId = (long)PaymentMethod.Online, // پیشفرض آنلاین
-                CreationDateTime = DateTime.UtcNow
-            }
-        }
-            };
+            var item = order.OrderDetails.FirstOrDefault(x => x.ProductId == productId);
+            if (item == null) return;
 
-            _db.Orders.Add(order);
-            await _db.SaveChangesAsync();
-
-            return order;
-        }
-        private async Task SetOrderPaymentType(Apino.Domain.Entities.Order order, PaymentMethod paymentMethod)
-        {
-            // غیرفعال کردن وضعیت‌های قبلی
-            foreach (var s in order.Statuses)
-                s.IsActive = false;
-
-            order.Statuses.Add(new OrderStatus
-            {
-                StatusTypeId = (long)PaymentStatus.Draft, // یا وضعیت فعلی مناسب
-                IsActive = true,
-                PaymentTypeId = (long)paymentMethod,
-                CreationDateTime = DateTime.UtcNow
-            });
-
-            order.CurrentStatusTypeId = (long)PaymentStatus.Draft;
-
+            _db.OrderDetails.Remove(item);
             await _db.SaveChangesAsync();
         }
 
- 
+
+        // =========================================================
+        // 🔢 Cart Count (Badge)
+        // =========================================================
+        public async Task<int> GetCartItemCountAsync(long userId)
+        {
+            return await _db.Orders
+                .Where(o =>
+                    o.UserId == userId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                )
+                .SelectMany(o => o.OrderDetails)
+                .SumAsync(x => (int?)x.Quantity) ?? 0;
+        }
+
+        public async Task<int> GetCartCountAsync(long userId)
+        {
+            return await GetCartItemCountAsync(userId);
+        }
+
+        // =========================================================
+        // 📦 Get Cart (View)
+        // =========================================================
         public async Task<CartViewModel> GetCartAsync(long userId)
         {
             var order = await _db.Orders
-                .Include(x => x.OrderDetails)
-                .ThenInclude(x => x.Product)
-                .Where(x => x.UserId == userId && x.CurrentStatusTypeId ==(long) PaymentStatus.Draft)
-                .FirstOrDefaultAsync();
+                .Include(o => o.OrderDetails)
+                .ThenInclude(d => d.Product)
+                .FirstOrDefaultAsync(o =>
+                    o.UserId == userId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
 
             if (order == null)
                 return new CartViewModel();
@@ -210,74 +188,158 @@ namespace Apino.Application.Services.Cart
                 ProductId = d.ProductId,
                 Title = d.Product.Title,
                 Price = d.Price,
-                Quantity = d.Quantity
+                Quantity = d.Quantity,
+                ImageName = d.Product.ImageName
             }).ToList();
 
-            var sub = items.Sum(x => x.Total);
+            var subTotal = items.Sum(x => x.Total);
             var taxPercent = _config.GetValue<int>("Tax:Percent");
-            var tax = sub * taxPercent / 100;
+            var taxAmount = subTotal * taxPercent / 100;
 
             return new CartViewModel
             {
                 Items = items,
-                SubTotal = sub,
-                TaxPercent = tax,
+                SubTotal = subTotal,
+                TaxPercent = taxPercent,
                 BranchId = order.BranchId
             };
         }
-        public async Task<int> GetCartItemCountAsync(long userId)
+
+        // =========================================================
+        // 🔄 Merge Guest Cart
+        // =========================================================
+        public async Task MergeGuestAsync(long userId, List<GuestCartItem> items)
         {
-            return await _db.CartItems
-                .Where(x => x.Cart.UserId == userId)
-                .SumAsync(x => x.Quantity);
-        }
-        public async Task RemoveAsync(long userId, long productId)
-        {
-            var cart = await _db.Carts
-                .Include(x => x.Items)
-                .FirstOrDefaultAsync(x => x.UserId == userId);
+            if (items == null || items.Count == 0)
+                return;
 
-            if (cart == null) return;
+            var branchId = items.First().BranchId;
+            var order = await GetOrCreateDraftOrder(userId, branchId);
 
-            var item = cart.Items.FirstOrDefault(x => x.ProductId == productId);
-            if (item == null) return;
+            var productIds = items.Select(x => x.ProductId).Distinct().ToList();
 
-            _db.CartItems.Remove(item);
+            var products = await _db.Products
+                .Where(x => productIds.Contains(x.Id))
+                .ToDictionaryAsync(x => x.Id);
+
+            foreach (var guestItem in items)
+            {
+                if (!products.TryGetValue(guestItem.ProductId, out var product))
+                    continue;
+
+                var qty = Math.Max(guestItem.Qty, 1);
+
+                var detail = order.OrderDetails
+                    .FirstOrDefault(x => x.ProductId == product.Id);
+
+                if (detail == null)
+                {
+                    order.OrderDetails.Add(new OrderDetail
+                    {
+                        ProductId = product.Id,
+                        Quantity = qty,
+                        Price = product.Price,
+                        TotalPrice = product.Price * qty
+                    });
+                }
+                else
+                {
+                    detail.Quantity += qty;
+                    detail.TotalPrice = detail.Quantity * detail.Price;
+                }
+            }
+
             await _db.SaveChangesAsync();
         }
-        public async Task UpdateQuantityAsync(long userId, long productId, int quantity)
-        {
-            var cart = await _db.Carts
-                .Include(x => x.Items)
-                .FirstOrDefaultAsync(x => x.UserId == userId);
 
-            if (cart == null)
+        // =========================================================
+        // 🧹 Clear Cart (Draft Order)
+        // =========================================================
+        public async Task ClearAsync(long orderId)
+        {
+            var order = await _db.Orders
+                .Include(o => o.OrderDetails)
+                .FirstOrDefaultAsync(o =>
+                    o.Id == orderId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
+
+            if (order == null) return;
+
+            _db.OrderDetails.RemoveRange(order.OrderDetails);
+            _db.Orders.Remove(order);
+
+            await _db.SaveChangesAsync();
+        }
+
+        // =========================================================
+        // 🔧 Helpers
+        // =========================================================
+        private async Task<Domain.Entities.Order> GetDraftOrder(long userId)
+        {
+            var order = await _db.Orders
+                .Include(o => o.OrderDetails)
+                .FirstOrDefaultAsync(o =>
+                    o.UserId == userId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
+
+            if (order == null)
                 throw new Exception("سبد خرید یافت نشد");
 
-            var item = cart.Items.FirstOrDefault(x => x.ProductId == productId);
-
-            if (item == null)
-                throw new Exception("آیتم یافت نشد");
-
-            if (quantity <= 0)
-            {
-                _db.CartItems.Remove(item);
-            }
-            else
-            {
-                item.Quantity = quantity;
-            }
-            await _db.SaveChangesAsync();
+            return order;
         }
-        public async Task<int> GetCartCountAsync(long userId)
+
+        private async Task<Domain.Entities.Order> GetOrCreateDraftOrder(long userId, long branchId)
         {
-            return await _db.CartItems
-                .Where(x => x.Cart.UserId == userId)
-                .SumAsync(x => x.Quantity);
+            var order = await _db.Orders
+                .Include(o => o.OrderDetails)
+                .Include(o => o.Statuses)
+                .FirstOrDefaultAsync(o =>
+                    o.UserId == userId &&
+                    o.BranchId == branchId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
+
+            if (order != null) return order;
+
+            order = new Domain.Entities.Order
+            {
+                UserId = userId,
+                BranchId = branchId,
+                OrderNumber = _tools.GenerateOrderNumber(),
+                CreationDate = DateTime.UtcNow,
+                CurrentStatusTypeId = (long)PaymentStatus.Draft,
+                OrderDetails = new List<OrderDetail>(),
+                Statuses = new List<OrderStatus>
+            {
+                new OrderStatus
+                {
+                    StatusTypeId = (long)PaymentStatus.Draft,
+                    PaymentTypeId = (long)PaymentMethod.Online,
+                    IsActive = true,
+                    CreationDateTime = DateTime.UtcNow
+                }
+            }
+            };
+
+            _db.Orders.Add(order);
+            await _db.SaveChangesAsync();
+
+            return order;
         }
 
-
+        public async Task<Domain.Entities.Order> GetActiveCartAsync(long userId, long branchId)
+        {
+            return await _db.Orders
+                .Include(o => o.OrderDetails)
+                .ThenInclude(d => d.Product)
+                .FirstOrDefaultAsync(o =>
+                    o.UserId == userId &&
+                    o.BranchId == branchId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
+        }
     }
-
 
 }

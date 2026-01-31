@@ -9,11 +9,12 @@ namespace Apino.Domain.Enums
     public enum PaymentStatus
     {
         Pending = 1,   // در انتظار پرداخت
-        Success = 2,   // موفق
-        VerifyByBranch = 3,     // تایید شعبه.
-        Preparing = 4,     // در حال آماده‌سازی.
-        Done = 5,     // تحویل شده.
-        Canceled = 6,     // لغو شده.
-        Draft = 7,     // در سبد خرید.
+        Success = 2,
+        PaymentFailed =3,// پرداخت ناموفق
+        VerifyByBranch = 4,     // تایید شعبه.
+        Preparing = 5,     // در حال آماده‌سازی.
+        Done = 6,     // تحویل شده.
+        Canceled = 7,     // لغو شده.
+        Draft = 0,     // در سبد خرید.
     }
 }

@@ -10,8 +10,8 @@ namespace Apino.Application.Services.Cart
 {
     public interface ICartService
     {
-        Task AddAsync(long userId, long branchId, long productId, int qty);
-        Task<Apino.Domain.Entities.Cart> GetActiveCartAsync(long userId, long branchId);
+        Task AddAsync(long userId, long branchId, long productId, int qty,decimal price);
+        Task<Domain.Entities.Order> GetActiveCartAsync(long userId, long branchId);
         Task MergeGuestAsync(long userId, List<GuestCartItem> items);
         Task ClearAsync(long cartId);
         Task<CartViewModel> GetCartAsync(long userId);

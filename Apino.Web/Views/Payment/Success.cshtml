@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "_PaymentResultLayout";
+
+    ViewBag.Title = "پرداخت موفق";
+    ViewBag.Heading = "پرداخت با موفقیت انجام شد ✅";
+    ViewBag.TitleClass = "text-success";
+
+    ViewBag.Message = @"
+        سفارش شما با موفقیت ثبت و پرداخت شد.<br/>
+        جزئیات سفارش از طریق پیامک برای شما ارسال گردید.
+    ";
+
+    ViewBag.ShowTracking = true;
+    ViewBag.TrackingNumber = Model?.TrackingNumber ?? ViewBag.TrackingNumber;
+
+    ViewBag.ShowGoToOrders = true;
+    ViewBag.ShowBackToHome = true;
+
+    ViewBag.AutoRedirect = true;
+}

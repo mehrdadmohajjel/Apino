@@ -138,6 +138,7 @@ wwwroot\images\category\coffe.png
 wwwroot\images\category\place.png
 wwwroot\images\category\shop.png
 wwwroot\images\category\studio.png
+wwwroot\images\no-image.png
 wwwroot\images\products\Americano.jpg
 wwwroot\images\products\bidmeshkdrink.jpg
 wwwroot\images\products\Damnoosh-floo.jpg

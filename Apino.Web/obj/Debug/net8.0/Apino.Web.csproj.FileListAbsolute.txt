@@ -781,3 +781,9 @@ C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\Apino.
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\Apino.Web.genruntimeconfig.cache
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\ref\Apino.Web.dll
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Web\obj\Debug\net8.0\Apino.Web.sourcelink.json
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Web\bin\Debug\net8.0\Parbad.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Web\bin\Debug\net8.0\Parbad.AspNetCore.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Web\bin\Debug\net8.0\Parbad.Storage.Abstractions.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Web\bin\Debug\net8.0\Parbad.Storage.Cache.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Web\bin\Debug\net8.0\Parbad.Storage.EntityFrameworkCore.dll
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Web\obj\Debug\net8.0\Apino.Web.sourcelink.json

@@ -34,7 +34,7 @@ namespace Apino.Application.Services.Order
         {
             var cart = await _cartService.GetActiveCartAsync(userId, branchId);
 
-            if (cart == null || !cart.Items.Any())
+            if (cart == null || !cart.OrderDetails.Any())
                 throw new Exception("سبد خرید خالی است");
 
             var order = new Domain.Entities.Order
@@ -44,7 +44,7 @@ namespace Apino.Application.Services.Order
                 OrderNumber = _tools.GenerateOrderNumber(),
                 CreationDate = DateTime.UtcNow,
                 CurrentStatusTypeId = (long)PaymentStatus.Pending,
-                OrderDetails = cart.Items.Select(i => new OrderDetail
+                OrderDetails = cart.OrderDetails.Select(i => new OrderDetail
                 {
                     ProductId = i.ProductId,
                     Quantity = i.Quantity,
@@ -116,23 +116,33 @@ namespace Apino.Application.Services.Order
         public async Task<OrderPaymentDto> GetOrderForPaymentAsync(long orderId)
         {
             var order = await _db.Orders
-                    .Include(o => o.OrderDetails)
-                    .FirstOrDefaultAsync(o => o.Id == orderId);
+                .Include(o => o.OrderDetails)
+                .FirstOrDefaultAsync(o =>
+                    o.Id == orderId &&
+                    o.CurrentStatusTypeId == (long)PaymentStatus.Draft
+                );
 
             if (order == null)
-                throw new Exception("سفارش یافت نشد");
+                throw new Exception("سفارش معتبر برای پرداخت یافت نشد");
+
+            if (!order.OrderDetails.Any())
+                throw new Exception("سفارش خالی است");
 
             var taxPercent = _config.GetValue<int>("Tax:Percent");
 
             var subTotal = order.OrderDetails.Sum(x => x.TotalPrice);
             var taxAmount = Math.Round(subTotal * taxPercent / 100, 0);
-            var finalAmount = subTotal + taxAmount;
+            var totalAmount = subTotal + taxAmount;
 
             return new OrderPaymentDto
             {
                 OrderId = order.Id,
-                TrackingNumber = long.Parse(order.OrderNumber),
-                TotalAmount = finalAmount
+                UserId = order.UserId,
+                BranchId = order.BranchId,
+                SubTotal = subTotal,
+                TaxAmount = taxAmount,
+                TotalAmount = totalAmount,
+                TrackingNumber = long.Parse(order.OrderNumber)
             };
         }
 
@@ -207,22 +217,27 @@ namespace Apino.Application.Services.Order
 
         public async Task DecreaseProductStockAsync(long orderId)
         {
+            using var tx = await (_db as DbContext)!.Database.BeginTransactionAsync();
             var order = await _db.Orders
                 .Include(o => o.OrderDetails)
-                    .ThenInclude(d => d.Product)
+                .ThenInclude(d => d.Product)
                 .FirstOrDefaultAsync(o => o.Id == orderId);
 
-            if (order == null) return;
+            if (order == null)
+                throw new Exception("سفارش یافت نشد");
 
-            foreach (var detail in order.OrderDetails)
+            foreach (var item in order.OrderDetails)
             {
-                detail.Product.Stock -= detail.Quantity;
-                if (detail.Product.Stock < 0)
-                    detail.Product.Stock = 0;
+                if (item.Product.Stock < item.Quantity)
+                    throw new Exception($"موجودی محصول {item.Product.Title} کافی نیست");
+
+                item.Product.Stock -= item.Quantity;
             }
 
             await _db.SaveChangesAsync();
+            await tx.CommitAsync();
         }
+
 
     }
 

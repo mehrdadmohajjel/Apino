@@ -111,20 +111,22 @@ $(function () {
 function updateCartBadge(newCount) {
 
     const badge = $('#cart-count');
+
+    newCount = parseInt(newCount) || 0;
     const oldCount = parseInt(badge.text()) || 0;
 
     if (newCount <= 0) {
-        badge.fadeOut(150);
+        badge.text('0').hide();
         localStorage.setItem('cartCount', 0);
         return;
     }
 
     badge.text(newCount).fadeIn(150);
 
-    // 🔔 فقط اگر عدد تغییر کرده → انیمیشن
+    // انیمیشن فقط در صورت تغییر عدد
     if (newCount !== oldCount) {
-        badge.removeClass('bump'); // reset
-        void badge[0].offsetWidth; // force reflow
+        badge.removeClass('bump');
+        void badge[0].offsetWidth;
         badge.addClass('bump');
     }
 
@@ -132,12 +134,13 @@ function updateCartBadge(newCount) {
 }
 
 
-
 async function loadCartCount() {
 
+    const badge = $('#cart-count');
     const token = localStorage.getItem('accessToken');
+
     if (!token) {
-        $('#cart-count').hide();
+        badge.hide();
         return;
     }
 
@@ -148,22 +151,24 @@ async function loadCartCount() {
             }
         });
 
-        if (!res.ok) return;
-
-        const data = await res.json();
-
-        if (data.count > 0) {
-            $('#cart-count').text(data.count).show();
-        } else {
-            $('#cart-count').hide();
+        if (!res.ok) {
+            badge.hide();
+            return;
         }
 
-        localStorage.setItem('cartCount', data.count);
+        const data = await res.json();
+        const count = parseInt(data.count) || 0;
+
+        updateCartBadge(count);
 
     } catch (e) {
-        console.error('Cart count error', e);
+        console.error('Cart count error:', e);
+        badge.hide();
     }
 }
+
+
+
 $('#cart-link').on('click', function () {
 
     const token = localStorage.getItem('accessToken');

@@ -25,4 +25,7 @@
 	  <ProjectReference Include="..\Apino.Domain\Apino.Domain.csproj" />
 	  <ProjectReference Include="..\Apino.Infrastructure\Apino.Infrastructure.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\js\NewFolder\" />
+	</ItemGroup>
 </Project>

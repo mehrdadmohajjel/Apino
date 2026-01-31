@@ -8,5 +8,6 @@
         public decimal TaxAmount { get; set; }
         public decimal TotalAmount { get; set; }
         public long TrackingNumber { get; set; }
+        public long UserId { get; set; }
     }
 }

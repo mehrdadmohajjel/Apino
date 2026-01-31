@@ -11,6 +11,7 @@
         public string BranchAdminMobile { get; set; }
         public string SysAdmimMobile { get; set; }
         public decimal TotalAmount { get; set; }
+        public decimal TrackingNumber { get; set; }
         public List<OrderItemDto> Items { get; set; } = new();
     }
 }

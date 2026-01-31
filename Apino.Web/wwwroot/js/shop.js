@@ -13,20 +13,22 @@ let currentCategory = null;
 function updateCartBadge(newCount) {
 
     const badge = $('#cart-count');
+
+    newCount = parseInt(newCount) || 0;
     const oldCount = parseInt(badge.text()) || 0;
 
     if (newCount <= 0) {
-        badge.fadeOut(150);
+        badge.text('0').hide();
         localStorage.setItem('cartCount', 0);
         return;
     }
 
     badge.text(newCount).fadeIn(150);
 
-    // 🔔 فقط اگر عدد تغییر کرده → انیمیشن
+    // انیمیشن فقط در صورت تغییر عدد
     if (newCount !== oldCount) {
-        badge.removeClass('bump'); // reset
-        void badge[0].offsetWidth; // force reflow
+        badge.removeClass('bump');
+        void badge[0].offsetWidth;
         badge.addClass('bump');
     }
 
@@ -111,6 +113,7 @@ $(document).on('click', '.add-to-cart-btn', function () {
     const btnBranchId = $(this).data('branch-id'); // 👈 اسم متفاوت
     const stock = parseInt($(this).data('stock'));
     const payAtPlace = $(this).data('payatplace') == 1;
+    const price = $(this).data('price') ;
 
     setTimeout(() => $(this).prop('disabled', false), 1500);
 
@@ -127,13 +130,14 @@ $(document).on('click', '.add-to-cart-btn', function () {
     const token = localStorage.getItem('accessToken');
 
     if (token) {
-        addToCart(productId, btnBranchId, payAtPlace);
+        addToCart(productId, btnBranchId, payAtPlace,price);
     } else {
         addToGuestCart({
             productId,
             branchId: btnBranchId,
             quantity: 1,
-            payAtPlace
+            payAtPlace,
+            price
         });
         openLoginModal();
     }
@@ -168,7 +172,7 @@ function addToGuestCart(item) {
 }
 
 // ================= Add To Cart AJAX =================
-function addToCart(productId, branchId, payAtPlace) {
+function addToCart(productId, branchId, payAtPlace,price) {
 
     Swal.fire({
         title: 'در حال افزودن به سبد...',
@@ -180,7 +184,7 @@ function addToCart(productId, branchId, payAtPlace) {
         url: '/cart/add',
         type: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify({ productId, branchId, payAtPlace })
+        data: JSON.stringify({ productId, branchId, payAtPlace,price })
     })
         .done(function (res) {
             Swal.close();

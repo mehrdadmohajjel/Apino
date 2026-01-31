@@ -1,0 +1,135 @@
+﻿<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @Html.Partial("_Heads")
+
+    <style>
+        .result-animate {
+            animation: pop 0.6s ease-out;
+        }
+
+        @@keyframes pop {
+            0%
+
+        {
+            transform: scale(0.85);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        }
+    </style>
+
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+
+    <div class="dark-version">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <section class="coming-soon-area">
+        <div class="container-fluid p-0">
+            <div class="row m-0">
+
+                <!-- Content -->
+                <div class="col-lg-6 p-0">
+                    <div class="coming-soon-content">
+                        <div class="d-table">
+                            <div class="d-table-cell result-animate">
+
+                                <div class="logo black-logo">
+                                    <img src="/assets/img/black-logo.png">
+                                </div>
+                                <div class="logo white-logo">
+                                    <img src="/assets/img/white-logo.png">
+                                </div>
+
+                                <h3 class="@ViewBag.TitleClass">
+                                    @ViewBag.Heading
+                                </h3>
+
+                                <p class="mt-3">
+                                    @Html.Raw(ViewBag.Message)
+                                </p>
+
+                                @if (ViewBag.ShowTracking == true)
+                                {
+                                    <div class="alert alert-info mt-3">
+                                        کد رهگیری:
+                                        <strong>@ViewBag.TrackingNumber</strong>
+                                    </div>
+                                }
+
+                                @if (ViewBag.AutoRedirect == true)
+                                {
+                                    <p class="mt-3 text-muted">
+                                        انتقال به صفحه اصلی تا
+                                        <span id="redirect-counter">15</span>
+                                        ثانیه دیگر...
+                                    </p>
+                                }
+
+                                @if (ViewBag.ShowBackToHome == true)
+                                {
+                                    <a href="/Home" class="btn btn-primary mt-4">
+                                        بازگشت به صفحه اصلی
+                                    </a>
+                                }
+
+                                @if (ViewBag.ShowGoToOrders == true)
+                                {
+                                    <a href="/orders" class="btn btn-success mt-4">
+                                        مشاهده سفارش‌ها
+                                    </a>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="col-lg-6 p-0">
+                    <div class="coming-soon-time">
+                        <img src="/assets/img/coming-soon-bg.jpg">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    @Html.Partial("_FooterCodes")
+
+    @if (ViewBag.AutoRedirect == true)
+    {
+        <script>
+            let seconds = 15;
+            const counterEl = document.getElementById('redirect-counter');
+
+            const timer = setInterval(() => {
+                seconds--;
+                if (counterEl) counterEl.innerText = seconds;
+
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    window.location.href = '/Home';
+                }
+            }, 1000);
+        </script>
+    }
+
+</body>
+</html>

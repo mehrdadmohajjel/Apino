@@ -4,29 +4,52 @@ using Apino.Application.Services.Notif;
 using Apino.Application.Services.Order;
 using Apino.Domain.Entities;
 using Apino.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Parbad;
 using Parbad.AspNetCore;
+using System.Security.Claims;
 
 namespace Apino.Web.Controllers
 {
+    [Authorize]
     public class PaymentController : Controller
     {
-        private readonly INotificationService _notificationService;
         private readonly IOrderService _orderService;
         private readonly ISmsSender _sms;
+        private readonly INotificationService _notificationService;
         private readonly IOnlinePayment _onlinePayment;
 
-        public PaymentController(IOrderService orderService,ISmsSender sms, INotificationService notificationService)
+        public PaymentController(
+            IOrderService orderService,
+            ISmsSender sms,
+            INotificationService notificationService,
+            IOnlinePayment onlinePayment)
         {
             _orderService = orderService;
             _sms = sms;
             _notificationService = notificationService;
+            _onlinePayment = onlinePayment;
         }
+
+        // =======================
+        // شروع پرداخت
+        // =======================
         [HttpGet]
         public async Task<IActionResult> Pay(long orderId)
         {
+            var userId = long.Parse(
+                User.FindFirstValue(ClaimTypes.NameIdentifier)
+                ?? User.FindFirstValue("sub")
+            );
+
             var order = await _orderService.GetOrderForPaymentAsync(orderId);
+
+            if (order == null || order.UserId != userId)
+                return Unauthorized();
+
+            if (order.TotalAmount <= 0)
+                return View("PayRequestError");
 
             var callbackUrl = Url.Action(
                 "Verify",
@@ -36,133 +59,94 @@ namespace Apino.Web.Controllers
 
             var result = await _onlinePayment.RequestAsync(invoice =>
             {
-                invoice.SetAmount(order.TotalAmount)
-                       .SetCallbackUrl(callbackUrl)
-                       .SetGateway("Mellat")
-                       .SetTrackingNumber(order.TrackingNumber);
+                invoice
+                    .SetAmount(order.TotalAmount)
+                    .SetGateway("Mellat")
+                    .SetTrackingNumber(order.TrackingNumber)
+                    .SetCallbackUrl(callbackUrl);
             });
 
             if (result.IsSucceed)
                 return result.GatewayTransporter.TransportToGateway();
 
-            return View("PayRequestError", result);
+            return View("PayRequestError");
         }
 
-
-
-
-
-        [HttpPost]
-        public async Task<IActionResult> Pay(PayViewModel vm)
-        {
-            var callbackUrl = Url.Action("Verify", "Payment", new { orderId = vm.OrderId }, Request.Scheme);
-
-            var result = await _onlinePayment.RequestAsync(invoice =>
-            {
-                invoice.SetCallbackUrl(callbackUrl)
-                       .SetAmount(vm.Amount)
-                       .SetGateway("Mellat")
-                       .SetTrackingNumber(vm.OrderId);
-            });
-
-            if (result.IsSucceed)
-                return result.GatewayTransporter.TransportToGateway();
-
-            return View("PayRequestError", result);
-        }
-
-        [HttpGet, HttpPost]
+        // =======================
+        // برگشت از بانک
+        // =======================
+        [AllowAnonymous]
+        [HttpGet]
         public async Task<IActionResult> Verify(long orderId)
         {
-            // 1️⃣ دریافت اطلاعات پرداخت از Parbad
             var invoice = await _onlinePayment.FetchAsync();
 
             if (invoice == null)
                 return View("PaymentFailed");
 
-            // اگر قبلاً بررسی شده
+            // جلوگیری از دوبار Verify
             if (invoice.IsAlreadyVerified)
-                return RedirectToAction("Success");
+                return RedirectToAction("Success", new { trackingNumber = invoice.TrackingNumber });
 
-            // فقط در این وضعیت اجازه Verify داریم
             if (invoice.Status != PaymentFetchResultStatus.ReadyForVerifying)
                 return View("PaymentFailed");
 
-            // 2️⃣ تایید پرداخت
             var verify = await _onlinePayment.VerifyAsync(invoice);
 
             if (!verify.IsSucceed)
                 return View("PaymentFailed");
 
-            // 3️⃣ ثبت پرداخت در سیستم
+            // ثبت پرداخت
             await _orderService.MarkAsPaidAsync(
                 orderId,
                 (long)PaymentMethod.Online,
                 verify.TransactionCode
             );
 
-            // 4️⃣ کاهش موجودی کالاها
+            // کاهش موجودی
             await _orderService.DecreaseProductStockAsync(orderId);
 
-            // 5️⃣ دریافت اطلاعات پیامک
+            // اطلاعات پیام
             var data = await _orderService.GetOrderMobileInfo(orderId);
 
             var itemsText = string.Join("، ",
                 data.Items.Select(i => $"{i.Title}×{i.Qty}")
             );
 
-            var userMessage =
-        $@"پرداخت شما با موفقیت انجام شد ✅
-شماره سفارش: {data.OrderNumber}
-مبلغ: {data.TotalAmount:N0} تومان
-اقلام: {itemsText}
-با سپاس 🌱";
+            // SMS کاربر
+            await _sms.SendAsync(
+                data.UserMobile,
+                $"پرداخت شما با موفقیت انجام شد ✅\n" +
+                $"شماره سفارش: {data.OrderNumber}\n" +
+                $"کد رهگیری: {data.TrackingNumber}\n" +
+                $"مبلغ: {data.TotalAmount:N0} تومان\n" +
+                $"اقلام: {itemsText}"
+            );
 
-            var branchAdminMessage =
-        $@"سفارش پرداخت شد
-شماره: {data.OrderNumber}
-مبلغ: {data.TotalAmount:N0} تومان";
-
-            var sysAdminMessage =
-        $@"پرداخت جدید ثبت شد
-سفارش: {data.OrderNumber}
-مبلغ: {data.TotalAmount:N0} تومان";
-
-            // 6️⃣ ارسال پیامک‌ها
-            if (!string.IsNullOrWhiteSpace(data.UserMobile))
-                await _sms.SendAsync(data.UserMobile, userMessage);
-
-            if (!string.IsNullOrWhiteSpace(data.BranchAdminMobile))
-                await _sms.SendAsync(data.BranchAdminMobile, branchAdminMessage);
-
-            if (!string.IsNullOrWhiteSpace(data.SysAdmimMobile))
-                await _sms.SendAsync(data.SysAdmimMobile, sysAdminMessage);
-            //================Notif
+            // نوتیفیکیشن
             await _notificationService.CreateAsync(
-                            data.UserId,
-                            "پرداخت موفق",
-                            $"سفارش {data.OrderNumber} با موفقیت پرداخت شد",
-                            NotificationType.OrderPaid,
-                            data.BranchId
-                        );
-                            await _notificationService.CreateAsync(
-                    data.BranchAdminUserId,
-                    "پرداخت جدید",
-                    $"سفارش {data.OrderNumber} پرداخت شد",
-                    NotificationType.OrderPaid,
-                    data.BranchId
-                );
+                data.UserId,
+                "پرداخت موفق",
+                $"سفارش {data.OrderNumber} پرداخت شد",
+                NotificationType.OrderPaid,
+                data.BranchId
+            );
 
-                await _notificationService.CreateAsync(
-                    data.SystemAdminUserId,
-                    "پرداخت جدید",
-                    $"سفارش {data.OrderNumber} پرداخت شد",
-                    NotificationType.OrderPaid,
-                    data.BranchId
+            return RedirectToAction(
+                "Success",
+                new { trackingNumber = data.TrackingNumber }
+            );
+        }
 
-                );
-            // 7️⃣ انتقال به صفحه موفق
-            return RedirectToAction("Success");
+        // =======================
+        // صفحه موفق
+        // =======================
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Success(long trackingNumber)
+        {
+            ViewBag.TrackingNumber = trackingNumber;
+            return View();
         }
     }
 }

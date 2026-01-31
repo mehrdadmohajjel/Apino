@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "_PaymentResultLayout";
+
+    ViewBag.Title = "پرداخت ناموفق";
+    ViewBag.Heading = "پرداخت انجام نشد ❌";
+    ViewBag.TitleClass = "text-danger";
+
+    ViewBag.Message = @"
+        متأسفانه پرداخت شما ناموفق بود.<br/>
+        در صورت کسر وجه، مبلغ تا ۷۲ ساعت آینده به حساب شما باز خواهد گشت.
+    ";
+
+    ViewBag.ShowBackToHome = true;
+    ViewBag.AutoRedirect = false;
+}

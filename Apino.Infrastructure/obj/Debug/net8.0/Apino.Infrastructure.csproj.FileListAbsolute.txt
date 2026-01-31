@@ -80,3 +80,4 @@ C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\ne
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.genruntimeconfig.cache
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\ref\Apino.Infrastructure.dll
 C:\Users\Mehrdad\Desktop\New Apino\Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.sourcelink.json
+C:\Users\golshan\Desktop\New Apino\Apino\Apino.Infrastructure\obj\Debug\net8.0\Apino.Infrastructure.sourcelink.json
