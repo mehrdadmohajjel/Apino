@@ -159,6 +159,7 @@ wwwroot\images\products\Tramiso-Shake.jpg
 wwwroot\js\auth.js
 wwwroot\js\cart.js
 wwwroot\js\common.js
+wwwroot\js\notification.js
 wwwroot\js\shop.js
 wwwroot\js\site - Copy.js
 wwwroot\js\site.js

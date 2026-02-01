@@ -27,6 +27,7 @@ namespace Apino.Application.Services.Notif
         Task<List<Notification>> GetLastUnreadAsync(long userId, int take = 5);
 
         Task<List<Notification>> GetAllAsync(long userId);
+        Task MarkAsReadAsync(long notificationId, long userId);
 
         Task MarkAllAsReadAsync(long userId);
         Task<NotificationListViewModel> GetPagedAsync(long userId, int page, int pageSize, string search,

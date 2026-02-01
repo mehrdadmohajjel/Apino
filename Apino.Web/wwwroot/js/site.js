@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     loadCartCount();
+    loadNotifications();
 
     const $branchProducts = $("#branch-products");
     const $branchProductsRow = $("#branch-products .row");
@@ -183,6 +184,92 @@ $('#cart-link').on('click', function () {
     window.location.href = '/cart';
 });
 
+$('.notification-btn').on('click', function () {
+    loadNotifications();
+});
+
+/* ==============================
+   Load Notifications
+============================== */
+function loadNotifications() {
+
+    $.get('/notification/latest')
+        .done(res => {
+
+            const dropdown = $('.notification-dropdown');
+            dropdown.empty();
+
+            // Badge count
+            if (res.count > 0) {
+                $('#notif-count').text(res.count).fadeIn(150);
+            } else {
+                $('#notif-count').fadeOut(100);
+            }
+
+            // Empty
+            if (!res.items || res.items.length === 0) {
+                dropdown.append(`
+                    <li class="text-center text-muted p-3">
+                        اعلانی وجود ندارد
+                    </li>
+                `);
+                return;
+            }
+
+            // Items
+            res.items.forEach(n => {
+                dropdown.append(`
+                    <li class="dropdown-item notification-item ${n.isRead ? '' : 'unread'}"
+                        data-id="${n.id}">
+                        <div class="fw-bold">${n.title}</div>
+                        <div class="small text-muted">${n.message}</div>
+                        <div class="text-end text-secondary small mt-1">${n.date}</div>
+                    </li>
+                `);
+            });
+
+            dropdown.append(`
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a href="javascript:void(0)"
+                       id="go-to-notifications"
+                       class="dropdown-item text-center text-primary">
+                        مشاهده همه اعلان‌ها
+                    </a>
+                </li>
+            `);
+        })
+        .fail(() => {
+            $('.notification-dropdown').html(`
+                <li class="text-center text-danger p-3">
+                    خطا در دریافت اعلان‌ها
+                </li>
+            `);
+        })
+}
+//====================================
+//  خواندن آیتم با کلیک روش
+//======================================
+$(document).on('click', '.notification-item', function () {
+
+    const id = $(this).data('id');
+    const el = $(this);
+
+    $.post('/notification/mark-read', { id })
+        .done(() => {
+            el.removeClass('unread');
+            loadNotifications(); // refresh badge
+        });
+});
+$('#mark-all-read').on('click', function () {
+
+    $.post('/notification/mark-all')
+        .done(() => {
+            $('.notification-item').removeClass('unread');
+            $('#notif-count').fadeOut();
+            Toast.fire({ icon: 'success', title: 'همه اعلان‌ها خوانده شدند' });
+        });
+});
 
 //$('#branch-products').on('click', '.category-box', function () {
 //    var categoryId = $(this).data('id');

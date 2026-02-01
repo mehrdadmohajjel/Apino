@@ -1,6 +1,7 @@
 ﻿using Apino.Application.Services;
 using Apino.Application.Services.Auth;
 using Apino.Application.Services.Cart;
+using Apino.Application.Services.Notif;
 using Apino.Application.Services.Order;
 using Apino.Infrastructure;
 using Apino.Infrastructure.Extensions;
@@ -37,6 +38,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IToolsService, Tools>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 // ===================================================
 // 🔐 AUTHENTICATION (اصلاح حیاتی)

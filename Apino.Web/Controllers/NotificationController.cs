@@ -9,6 +9,7 @@ using System.Threading;
 
 namespace Apino.Web.Controllers
 {
+
     [Authorize]
     [Route("notifications")]
     public class NotificationController : Controller
@@ -28,7 +29,7 @@ namespace Apino.Web.Controllers
             return Json(new { count });
         }
 
-        [HttpGet("latest")]
+        [HttpGet()]
         public async Task<IActionResult> Latest()
         {
             var userId = long.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
@@ -59,7 +60,25 @@ namespace Apino.Web.Controllers
             return PartialView("_NotificationTable", model);
         }
 
+        // POST: /notification/mark-read
+        [HttpPost("mark-read")]
+        public async Task<IActionResult> MarkRead([FromBody] long notificationId)
+        {
+            var userId = long.Parse(
+                User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                ?? User.FindFirst("sub")!.Value
+            );
 
+            await _service.MarkAsReadAsync(notificationId, userId);
+
+            var unreadCount = await _service.GetUnreadCountAsync(userId);
+
+            return Ok(new
+            {
+                success = true,
+                unreadCount
+            });
+        }
         //    public async Task<IActionResult> Index(
         //int page = 1,
         //bool? isRead = null,

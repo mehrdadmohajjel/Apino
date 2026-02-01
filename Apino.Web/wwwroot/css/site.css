@@ -46,3 +46,29 @@
         transform: scale(1);
     }
 }
+.notification-icon {
+    color: #fff !important;
+    font-size: 20px;
+}
+
+/* Hover */
+.notification-btn:hover .notification-icon {
+    color: #f1f1f1 !important;
+}
+.badge-animate {
+    animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

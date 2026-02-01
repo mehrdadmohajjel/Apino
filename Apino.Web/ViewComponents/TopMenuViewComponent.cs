@@ -1,4 +1,5 @@
-﻿using Apino.Application.Services.Notif;
+﻿using Apino.Application.Dtos;
+using Apino.Application.Services.Notif;
 using Apino.Domain.Entities;
 using Apino.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -51,27 +52,39 @@ namespace Apino.Web.ViewComponents
         {
             var user = _httpContext.HttpContext.User;
 
-            string username = null;
             long? userId = null;
-
             if (user.Identity.IsAuthenticated)
             {
-                username = user.Identity.Name;
-                userId = long.Parse(user.FindFirst(ClaimTypes.NameIdentifier).Value);
+                userId = long.Parse(
+                    user.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                    ?? user.FindFirst("sub")!.Value
+                );
             }
 
-            var branches = await _db.Branches.OrderBy(b => b.Id).ToListAsync();
+            var notifications = new List<Notification>();
+            var unreadCount = 0;
+
+            if (userId != null)
+            {
+                notifications = _db.Notifications
+                    .Where(x => x.UserId == userId)
+                    .OrderByDescending(x => x.CreationDateTime)
+                    .Take(5)
+                    .ToList();
+
+                unreadCount = _db.Notifications
+                    .Count(x => x.UserId == userId && !x.IsRead);
+            }
 
             var model = new TopMenuViewModel
             {
-                Username = username,
-                Branches = branches,
-                UnreadNotifications = userId.HasValue
-                    ? await _notificationService.GetUnreadCountAsync(userId.Value)
-                    : 0,
-                LastNotifications = userId.HasValue
-                    ? await _notificationService.GetLastUnreadAsync(userId.Value)
-                    : new List<Notification>()
+                Username = user.Identity.IsAuthenticated ? user.Identity.Name : null,
+                Role = user.Identity.IsAuthenticated
+                    ? user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value
+                    : null,
+                Branches = _db.Branches.OrderBy(x => x.Id).ToList(),
+                LastNotifications = notifications,
+                UnreadNotifications = unreadCount
             };
 
             return View(model);
@@ -79,13 +92,5 @@ namespace Apino.Web.ViewComponents
     }
 }
 
-    public class TopMenuViewModel
-    {
-        public string Username { get; set; }
-        public string Role { get; set; }
-        public List<Branch> Branches { get; set; }
-    public int UnreadNotifications { get; set; }
-    public List<Notification> LastNotifications { get; set; }
-
-}
+   
 

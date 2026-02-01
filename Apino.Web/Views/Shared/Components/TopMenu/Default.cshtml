@@ -1,4 +1,8 @@
-﻿<ul class="navbar-nav">
+﻿@model TopMenuViewModel
+@using System.Linq
+@using Apino.Application.Dtos
+
+<ul class="navbar-nav">
     <li class="nav-item">
         <a href="/Home" class="nav-link">خانه</a>
     </li>
@@ -28,8 +32,34 @@
 </ul>
 
 <!-- بخش ثابت سبد خرید و دیگر امکانات -->
-<div class="others-options">
-    <a href="javascript:void(0)" id="cart-link" class="cart-btn position-relative">
+<div class="others-options d-flex align-items-center gap-3">
+
+    <!-- 🔔 Notification -->
+    <div class="dropdown">
+        <a href="javascript:void(0)"
+           class="nav-link position-relative notification-btn"
+           data-bs-toggle="dropdown">
+
+            <i class="flaticon-bell notification-icon"></i>
+
+            <span id="notif-count"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  style="font-size:11px; display:none;">
+                0
+            </span>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end notification-dropdown">
+            <!-- آیتم‌ها با JS پر میشن -->
+            <li class="text-center text-muted p-2">در حال بارگذاری...</li>
+        </ul>
+    </div>
+
+    <!-- 🛒 Cart -->
+    <a href="javascript:void(0)"
+       id="cart-link"
+       class="cart-btn position-relative">
+
         <i class="flaticon-shopping-basket"></i>
 
         <span id="cart-count"
@@ -37,54 +67,6 @@
               style="font-size:11px; display:none;">
             0
         </span>
-    </a>   
-    <a href="javascript:void(0)"
-       id="notif-link"
-       class="position-relative me-3"
-       data-bs-toggle="dropdown">
-        <i class="far fa-bell"></i>
-
-        @if (Model.UnreadNotifications > 0)
-        {
-            <span class="position-absolute top-0 start-100 translate-middle
-                         badge rounded-pill bg-danger notif-badge">
-                @Model.UnreadNotifications
-            </span>
-        }
     </a>
 
-    <ul class="dropdown-menu dropdown-menu-end notif-dropdown">
-        @if (!Model.LastNotifications.Any())
-        {
-            <li class="dropdown-item text-muted text-center">
-                اعلان جدیدی ندارید
-            </li>
-        }
-        else
-        {
-            @foreach (var n in Model.LastNotifications)
-            {
-                <li>
-                    <a href="#" class="dropdown-item small @(n.IsRead ? "" : "fw-bold")">
-                        <div>@n.Title</div>
-                        <div class="text-muted small">@n.Message</div>
-                    </a>
-                </li>
-            }
-
-            <li><hr class="dropdown-divider"></li>
-
-            <li>
-                <a href="/notifications" class="dropdown-item text-center text-primary">
-                    مشاهده همه اعلان‌ها
-                </a>
-            </li>
-        }
-    </ul>
-    @* <a href="/cart" class="btn btn-outline-primary position-relative">
-        سبد خرید
-        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-loaded="false">
-            0
-        </span>
-    </a> *@
 </div>

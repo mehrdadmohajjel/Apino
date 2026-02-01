@@ -138,7 +138,17 @@ namespace Apino.Application.Services.Notif
                 IsRead = isRead
             };
         }
+        public async Task MarkAsReadAsync(long notificationId, long userId)
+        {
+            var notif = await _db.Notifications
+                .FirstOrDefaultAsync(x => x.Id == notificationId && x.UserId == userId);
 
+            if (notif == null || notif.IsRead)
+                return;
+
+            notif.IsRead = true;
+            await _db.SaveChangesAsync();
+        }
 
     }
 
