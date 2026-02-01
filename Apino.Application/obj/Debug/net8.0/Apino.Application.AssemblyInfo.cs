@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Apino.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc5811e2142916b40ab5875cc2ef638b6f0bb0ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc3641d400f054b552e2c030141c647ba1ffbb59")]
 [assembly: System.Reflection.AssemblyProductAttribute("Apino.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Apino.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

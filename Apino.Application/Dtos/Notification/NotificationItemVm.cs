@@ -14,8 +14,7 @@ namespace Apino.Application.Dtos.Notification
         public string Message { get; set; }
         public bool IsRead { get; set; }
         public DateTime CreatedAt { get; set; }
-        public string PersianDate =>
-    PersianDateHelper.ToShamsi(CreatedAt);
+        public string PersianDate { get; set; }
 
     }
 

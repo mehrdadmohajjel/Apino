@@ -1,4 +1,5 @@
-﻿using Apino.Application.Dtos.Notification;
+﻿using Apino.Application.Common.Helper;
+using Apino.Application.Dtos.Notification;
 using Apino.Application.Interfaces;
 using Apino.Domain.Entities;
 using Apino.Domain.Enums;
@@ -66,13 +67,22 @@ namespace Apino.Application.Services.Notif
                 .CountAsync(x => x.UserId == userId && !x.IsRead);
         }
 
-        public async Task<List<Notification>> GetLastUnreadAsync(long userId, int take = 5)
+        public async Task<List<NotificationItemVm>> GetLastUnreadAsync(long userId, int take = 5)
         {
-            return await _db.Notifications
+            var data = await _db.Notifications
                 .Where(x => x.UserId == userId)
                 .OrderByDescending(x => x.CreationDateTime)
                 .Take(take)
                 .ToListAsync();
+
+            return data.Select(n => new NotificationItemVm
+            {
+                Id = n.Id,
+                Title = n.Title,
+                Message = n.Message,
+                IsRead = n.IsRead,
+                PersianDate =PersianDateHelper.ToShamsi(n.CreationDateTime)
+            }).ToList();
         }
 
         public async Task<List<Notification>> GetAllAsync(long userId)

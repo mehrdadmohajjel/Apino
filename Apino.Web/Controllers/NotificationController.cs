@@ -1,4 +1,5 @@
-﻿using Apino.Application.Dtos.Notification;
+﻿using Apino.Application.Common.Helper;
+using Apino.Application.Dtos.Notification;
 using Apino.Application.Services.Notif;
 using Apino.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,8 @@ namespace Apino.Web.Controllers
 {
 
     [Authorize]
-    [Route("notifications")]
+    [Route("notification")]
+
     public class NotificationController : Controller
     {
         private readonly INotificationService _service;
@@ -29,12 +31,32 @@ namespace Apino.Web.Controllers
             return Json(new { count });
         }
 
-        [HttpGet()]
+        [HttpGet("latest")]
         public async Task<IActionResult> Latest()
         {
-            var userId = long.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            if (!User.Identity.IsAuthenticated)
+                return Ok(new { count = 0, items = new List<object>() });
+
+            var userId = long.Parse(
+                User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                ?? User.FindFirst("sub")?.Value
+            );
+
             var items = await _service.GetLastUnreadAsync(userId);
-            return PartialView("_NotificationDropdown", items);
+
+            return Ok(new
+            {
+                count = items.Count,
+                items = items.Select(x => new
+                {
+                    id = x.Id,
+                    title = x.Title,
+                    message = x.Message,
+                    isRead = x.IsRead,
+                    date = x.CreatedAt.ToString("yyyy/MM/dd HH:mm"),
+                    persianDate=x.PersianDate
+                })
+            });
         }
         [HttpGet("/notifications")]
         public IActionResult Index()
@@ -62,23 +84,20 @@ namespace Apino.Web.Controllers
 
         // POST: /notification/mark-read
         [HttpPost("mark-read")]
-        public async Task<IActionResult> MarkRead([FromBody] long notificationId)
+        public async Task<IActionResult> MarkRead(long id)
         {
             var userId = long.Parse(
                 User.FindFirst(ClaimTypes.NameIdentifier)?.Value
                 ?? User.FindFirst("sub")!.Value
             );
 
-            await _service.MarkAsReadAsync(notificationId, userId);
+            await _service.MarkAsReadAsync(id, userId);
 
             var unreadCount = await _service.GetUnreadCountAsync(userId);
 
-            return Ok(new
-            {
-                success = true,
-                unreadCount
-            });
+            return Ok(new { success = true, unreadCount });
         }
+
         //    public async Task<IActionResult> Index(
         //int page = 1,
         //bool? isRead = null,
