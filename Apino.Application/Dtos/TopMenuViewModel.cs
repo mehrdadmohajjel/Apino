@@ -1,4 +1,5 @@
 ﻿using Apino.Application.Common.Helper;
+using Apino.Application.Dtos.Notification;
 using Apino.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,12 @@ namespace Apino.Application.Dtos
     {
         public string Username { get; set; }
         public string Role { get; set; }
+        public string PanelUrl { get; set; }
+        public string PanelTitle { get; set; }
+
         public List<Branch> Branches { get; set; }
         public int UnreadNotifications { get; set; }
-        public List<Domain.Entities.Notification> LastNotifications { get; set; } = new();
+        public List<NotificationItemVm> LastNotifications { get; set; } = new();
 
     }
 }

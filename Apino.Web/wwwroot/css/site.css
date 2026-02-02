@@ -124,3 +124,19 @@
         background-color: #f5f8ff;
         font-weight: 600;
     }
+.others-options {
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon,
+.cart-btn i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .others-options {
+        margin-top: 10px;
+    }
+}

@@ -1,4 +1,5 @@
 ﻿using Apino.Application.Dtos;
+using Apino.Application.Dtos.Notification;
 using Apino.Application.Services.Notif;
 using Apino.Domain.Entities;
 using Apino.Infrastructure.Data;
@@ -22,73 +23,81 @@ namespace Apino.Web.ViewComponents
             _notificationService = notificationService;
         }
 
-        //public IViewComponentResult Invoke()
-        //{
-        //    var user = _httpContext.HttpContext.User;
-        //    string username = user.Identity.IsAuthenticated ? user.Identity.Name : null;
-        //    string role = null;
-
-        //    if (user.Identity.IsAuthenticated)
-        //    {
-        //        if (user.IsInRole("SysAdmin")) role = "SysAdmin";
-        //        else if (user.IsInRole("BranchAdmin")) role = "BranchAdmin";
-        //        else role = "User";
-        //    }
-
-        //    // دریافت لیست شعب
-        //    var branches = _db.Branches.OrderBy(b => b.Id).ToList();
-
-        //    var model = new TopMenuViewModel
-        //    {
-        //        Username = username,
-        //        Role = role,
-        //        Branches = branches
-        //    };
-
-        //    return View(model);
-        //}
-
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var user = _httpContext.HttpContext.User;
 
             long? userId = null;
+            string role = null;
+
             if (user.Identity.IsAuthenticated)
             {
                 userId = long.Parse(
                     user.FindFirst(ClaimTypes.NameIdentifier)?.Value
                     ?? user.FindFirst("sub")!.Value
                 );
+
+                role = user.FindFirst(ClaimTypes.Role)?.Value;
             }
 
-            var notifications = new List<Notification>();
+            string panelUrl = null;
+            string panelTitle = null;
+
+            if (role == "SystemAdmin")
+            {
+                panelUrl = "/SysAdmin";
+                panelTitle = "ورود به پنل مدیر سیستم";
+            }
+            else if (role == "BranchAdmin")
+            {
+                panelUrl = "/BranchAdmin";
+                panelTitle = "ورود به پنل مدیریت شعبه";
+            }
+            else if (role == "Staff")
+            {
+                panelUrl = "/Staff";
+                panelTitle = "ورود به پنل کارمند";
+            }
+
+            var branches = _db.Branches.OrderBy(x => x.Id).ToList();
+
+            var lastNotifications = new List<NotificationItemVm>();
             var unreadCount = 0;
 
             if (userId != null)
             {
-                notifications = _db.Notifications
+                lastNotifications = await _db.Notifications
                     .Where(x => x.UserId == userId)
                     .OrderByDescending(x => x.CreationDateTime)
                     .Take(5)
-                    .ToList();
+                    .Select(n => new NotificationItemVm
+                    {
+                        Id = n.Id,
+                        Title = n.Title,
+                        Message = n.Message,
+                        IsRead = n.IsRead,
+                        CreatedAt = n.CreationDateTime
+                    })
+                    .ToListAsync();
 
-                unreadCount = _db.Notifications
-                    .Count(x => x.UserId == userId && !x.IsRead);
+                unreadCount = await _db.Notifications
+                    .CountAsync(x => x.UserId == userId && !x.IsRead);
             }
 
             var model = new TopMenuViewModel
             {
                 Username = user.Identity.IsAuthenticated ? user.Identity.Name : null,
-                Role = user.Identity.IsAuthenticated
-                    ? user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value
-                    : null,
-                Branches = _db.Branches.OrderBy(x => x.Id).ToList(),
-                LastNotifications = notifications,
+                Role = role,
+                PanelTitle = panelTitle,
+                PanelUrl = panelUrl,
+                Branches = branches,
+                LastNotifications = lastNotifications,
                 UnreadNotifications = unreadCount
             };
 
             return View(model);
         }
+
     }
 }
 
