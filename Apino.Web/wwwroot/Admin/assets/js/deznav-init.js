@@ -436,8 +436,8 @@ function getUrlParams(dParam){
 		$('#langSwitcher').selectpicker('val', CurrentLang);
 		
 		// Set body attribute and update translations
-		$('body').attr('data-language', CurrentLang);
-		updateTranslations(translations[CurrentLang]);
+		//$('body').attr('data-language', CurrentLang);
+		//updateTranslations(translations[CurrentLang]);
 
 		// Event handler for select change
 		$('#langSwitcher').on('change', function () {
@@ -468,13 +468,13 @@ function getUrlParams(dParam){
 	});
 	
 	if(direction == 'rtl' || body.attr('direction') == 'rtl'){
-		jQuery('.main-switcher').attr('href','assets/css/switcher-rtl.css');
-		jQuery('.main-plugins').attr('href','assets/css/plugins-rtl.css');
-		jQuery('.main-css').attr('href','assets/css/style-rtl.css');
+		jQuery('.main-switcher').attr('href','/admin/assets/css/switcher-rtl.css');
+        jQuery('.main-plugins').attr('href','/admin/assets/css/plugins-rtl.css');
+        jQuery('.main-css').attr('href','/admin/assets/css/style-rtl.css');
     }else{
-		jQuery('.main-switcher').attr('href','assets/css/switcher.css');
-		jQuery('.main-plugins').attr('href','assets/css/plugins.css');
-		jQuery('.main-css').attr('href','assets/css/style.css');
+        jQuery('.main-switcher').attr('href','/admin/assets/css/switcher.css');
+        jQuery('.main-plugins').attr('href','/admin/assets/css/plugins.css');
+        jQuery('.main-css').attr('href','/admin/assets/css/style.css');
 	}
 
 })(jQuery);

@@ -11,7 +11,7 @@ using System.Threading;
 namespace Apino.Web.Controllers
 {
 
-    [Authorize]
+    
     [Route("notification")]
 
     public class NotificationController : Controller

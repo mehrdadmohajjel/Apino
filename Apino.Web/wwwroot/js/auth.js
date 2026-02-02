@@ -234,12 +234,20 @@ function verifyOtp(mobile, code) {
     }).done(res => {
         Swal.close();
 
+        //localStorage.setItem('accessToken', res.accessToken);
+        //localStorage.setItem('refreshToken', res.refreshToken);
+        //localStorage.setItem('username', res.username || mobile);
+        //localStorage.setItem('role', res.role || 'User');
+
+        //renderUserMenu(res.username || mobile, res.role || 'User');
         localStorage.setItem('accessToken', res.accessToken);
         localStorage.setItem('refreshToken', res.refreshToken);
-        localStorage.setItem('username', res.username || mobile);
-        localStorage.setItem('role', res.role || 'User');
+        localStorage.setItem('username', res.username);
+        localStorage.setItem('role', res.role);
+        renderUserMenu(res.username, res.role);
 
-        renderUserMenu(res.username || mobile, res.role || 'User');
+
+
         mergeGuestCart();
     });
 }
@@ -254,8 +262,8 @@ function renderUserMenu(username, role) {
     }
 
     el.html(`
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">${username}</a>
+        <li class="nav-item">
+            <a class="nav-item" data-bs-toggle="dropdown">${username}</a>
             <ul class="dropdown-menu">
                 ${role === 'SysAdmin' ? '<li><a href="/sysAdmin">پنل مدیریت</a></li>' : ''}
                 ${role === 'BranchAdmin' ? '<li><a href="/branchAdmin">مدیریت شعبه</a></li>' : ''}

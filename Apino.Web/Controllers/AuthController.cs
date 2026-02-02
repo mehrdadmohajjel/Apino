@@ -61,7 +61,7 @@ namespace Apino.Web.Controllers
             var user = await _db.Users
                 .Include(x => x.UserProfile)
                 .FirstOrDefaultAsync(x => x.Mobile == request.Mobile);
-
+            
             if (user == null)
             {
                 user = new User
@@ -74,14 +74,17 @@ namespace Apino.Web.Controllers
                 _db.Users.Add(user);
                 await _db.SaveChangesAsync();
             }
-
+            var _userRole = await _db.BranchUsers
+               .FirstOrDefaultAsync(x => x.UserId == user.Id &&
+                        x.IsActive &&
+                        (x.FinishWorkDate == null || x.FinishWorkDate > DateTime.UtcNow));
             // 🔥 تشخیص Role واقعی
             UserRole finalRole = UserRole.User;
 
             // SystemAdmin
-            if (user.Role == UserRole.SystemAdmin)
+            if (_userRole== null)
             {
-                finalRole = UserRole.SystemAdmin;
+                finalRole = UserRole.User;
             }
             else
             {
@@ -128,6 +131,9 @@ namespace Apino.Web.Controllers
             return Ok(new
             {
                 accessToken,
+                refreshToken = (string?)null, // اگر نداری
+                username = user.Mobile,
+                role = finalRole.ToString(),
                 profileCompleted = user.UserProfile?.IsProfileCompleted ?? false
             });
         }
