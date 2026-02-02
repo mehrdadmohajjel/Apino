@@ -27,6 +27,5 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="wwwroot\js\NewFolder\" />
-	  <Folder Include="wwwroot\Admin\" />
 	</ItemGroup>
 </Project>

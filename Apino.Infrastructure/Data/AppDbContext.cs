@@ -36,6 +36,7 @@ namespace Apino.Infrastructure.Data
 
         public DbSet<OrderStatus> OrderStatuses => Set<OrderStatus>();
         public DbSet<Notification> Notifications => Set<Notification>();
+        public DbSet<BranchUser> BranchUsers => Set<BranchUser>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

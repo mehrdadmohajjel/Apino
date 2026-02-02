@@ -32,31 +32,28 @@ namespace Apino.Web.ViewComponents
 
             if (user.Identity.IsAuthenticated)
             {
-                userId = long.Parse(
-                    user.FindFirst(ClaimTypes.NameIdentifier)?.Value
-                    ?? user.FindFirst("sub")!.Value
-                );
-
                 role = user.FindFirst(ClaimTypes.Role)?.Value;
             }
 
             string panelUrl = null;
             string panelTitle = null;
 
-            if (role == "SystemAdmin")
+            switch (role)
             {
-                panelUrl = "/SysAdmin";
-                panelTitle = "ورود به پنل مدیر سیستم";
-            }
-            else if (role == "BranchAdmin")
-            {
-                panelUrl = "/BranchAdmin";
-                panelTitle = "ورود به پنل مدیریت شعبه";
-            }
-            else if (role == "Staff")
-            {
-                panelUrl = "/Staff";
-                panelTitle = "ورود به پنل کارمند";
+                case "SystemAdmin":
+                    panelUrl = "/SysAdmin";
+                    panelTitle = "  پنل مدیر سیستم";
+                    break;
+
+                case "BranchAdmin":
+                    panelUrl = "/BranchAdmin";
+                    panelTitle = " پنل مدیریت شعبه";
+                    break;
+
+                case "Staff":
+                    panelUrl = "/Staff";
+                    panelTitle = " پنل کارمند";
+                    break;
             }
 
             var branches = _db.Branches.OrderBy(x => x.Id).ToList();

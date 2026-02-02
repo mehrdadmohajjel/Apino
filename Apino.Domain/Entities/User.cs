@@ -13,11 +13,15 @@ namespace Apino.Domain.Entities
     {
         public string Mobile { get; set; } = null!;
         public bool IsActive { get; set; }
-        public long? BranchId { get; set; }
-        public UserRole Role { get; set; }   // SystemAdmin, BranchAdmin, User
+
+        public UserRole Role { get; set; } // فقط برای مشتری‌ها (User)
+
         public DateTime CreationDatetime { get; set; }
+
         public UserProfile? UserProfile { get; set; }
-        public List<UserToken>? Tokens { get; set; }
+
+        public List<BranchUser> BranchUsers { get; set; }
     }
+
 
 }

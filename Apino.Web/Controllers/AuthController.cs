@@ -67,14 +67,36 @@ namespace Apino.Web.Controllers
                 user = new User
                 {
                     Mobile = request.Mobile,
-                    Role = UserRole.User,
                     IsActive = true,
-                    CreationDatetime = DateTime.UtcNow
+                    CreationDatetime = DateTime.UtcNow,
+                    Role = UserRole.User // پیش‌فرض
                 };
                 _db.Users.Add(user);
                 await _db.SaveChangesAsync();
             }
 
+            // 🔥 تشخیص Role واقعی
+            UserRole finalRole = UserRole.User;
+
+            // SystemAdmin
+            if (user.Role == UserRole.SystemAdmin)
+            {
+                finalRole = UserRole.SystemAdmin;
+            }
+            else
+            {
+                var branchUser = await _db.BranchUsers
+                    .Where(x =>
+                        x.UserId == user.Id &&
+                        x.IsActive &&
+                        (x.FinishWorkDate == null || x.FinishWorkDate > DateTime.UtcNow)
+                    )
+                    .OrderByDescending(x => x.Id)
+                    .FirstOrDefaultAsync();
+
+                if (branchUser != null)
+                    finalRole = branchUser.Role;
+            }
             // 3. JWT (برای Ajax)
             var accessToken = _tokenService.GenerateAccessToken(user);
 
@@ -83,7 +105,7 @@ namespace Apino.Web.Controllers
     {
         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
         new Claim(ClaimTypes.MobilePhone, user.Mobile),
-        new Claim(ClaimTypes.Role, user.Role.ToString())
+        new Claim(ClaimTypes.Role, finalRole.ToString())
     };
 
             var identity = new ClaimsIdentity(

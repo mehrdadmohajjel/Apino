@@ -1,5 +1,8 @@
-﻿using Apino.Infrastructure.Data;
+﻿using Apino.Domain.Entities;
+using Apino.Domain.Enums;
+using Apino.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Apino.Web.Areas.BranchAdmin.ViewComponents
@@ -15,16 +18,19 @@ namespace Apino.Web.Areas.BranchAdmin.ViewComponents
             _http = http;
         }
 
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var userId = long.Parse(
                 _http.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value
             );
-
-            var branchTitle = _db.Users
-                .Where(x => x.Id == userId)
+            var branchTitle = await _db.BranchUsers
+                .Where(x =>
+                    x.UserId == userId &&
+                    x.Role == UserRole.BranchAdmin &&
+                    x.IsActive
+                )
                 .Select(x => x.Branch.Title)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
 
             return View("Default", branchTitle);
         }

@@ -82,20 +82,21 @@ namespace Apino.Application.Services.Order
             if (order == null)
                 throw new Exception("Order not found");
 
-            var branchAdmin = await _db.Users
+            var branchAdmin = await _db.BranchUsers.Include(a=>a.User)
                 .FirstOrDefaultAsync(a =>
                     a.BranchId == order.BranchId &&
                     a.Role == UserRole.BranchAdmin);
 
-            var sysAdmin = await _db.Users
+            var sysAdmin = await _db.BranchUsers.Include(a => a.User)
                 .FirstOrDefaultAsync(a =>
+                    a.BranchId == order.BranchId &&
                     a.Role == UserRole.SystemAdmin); // 🔴 BranchId حذف شد
 
             return new OrderUserMobileList
             {
                 UserMobile = order.User?.Mobile,
-                BranchAdminMobile = branchAdmin?.Mobile,
-                SysAdmimMobile = sysAdmin?.Mobile,
+                BranchAdminMobile = branchAdmin?.User.Mobile,
+                SysAdmimMobile = sysAdmin?.User.Mobile,
                 UserId = order.UserId,
                 BranchAdminUserId=branchAdmin != null ? branchAdmin.Id : 0,
                 SystemAdminUserId = sysAdmin != null ? sysAdmin.Id : 0, 

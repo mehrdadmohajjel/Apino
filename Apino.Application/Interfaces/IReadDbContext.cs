@@ -22,6 +22,7 @@ namespace Apino.Application.Interfaces
         DbSet<OrderStatusType> OrderStatusTypes { get; }
         DbSet<User> Users { get; }
         DbSet<Notification> Notifications { get; }
+        DbSet<BranchUser> BranchUsers { get; }
         
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
