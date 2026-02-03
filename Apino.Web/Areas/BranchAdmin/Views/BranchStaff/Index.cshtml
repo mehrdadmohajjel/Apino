@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "مدیریت پرسنل شعبه";
+}
+
+<style>
+    /* استایل برای لیست نتایج جستجو */
+    #search-results {
+        position: absolute;
+        z-index: 1050;
+        width: 100%;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 0 0 8px 8px;
+        max-height: 200px;
+        overflow-y: auto;
+        display: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .search-item {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #f1f1f1;
+        transition: background 0.2s;
+    }
+
+        .search-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .search-item:last-child {
+            border-bottom: none;
+        }
+</style>
+
+<div class="container-fluid px-0">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="fw-bold text-dark mb-1">پرسنل شعبه</h4>
+            <span class="text-muted small">مدیریت دسترسی‌ها و لیست کارکنان</span>
+        </div>
+        <button class="btn btn-primary shadow-sm" id="btn-add">
+            <i class="fa fa-user-plus ms-1"></i> افزودن کارمند
+        </button>
+    </div>
+
+    <!-- جدول پرسنل -->
+    <div class="card shadow border-0 rounded-3">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0" id="tblStaff">
+                    <thead class="bg-light">
+                        <tr class="text-muted small text-uppercase">
+                            <th class="ps-4 py-3">کارمند</th>
+                            <th>شماره تماس</th>
+                            <th>نقش (سمت)</th>
+                            <th>تاریخ شروع</th>
+                            <th class="text-center">وضعیت</th>
+                            <th class="text-end pe-4">عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border-top-0">
+                        <!-- پر شده توسط JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal افزودن کارمند -->
+<div class="modal fade" id="staffModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold">افزودن کارمند جدید</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="frmStaff">
+                    <!-- فیلد جستجوی کاربر -->
+                    <div class="mb-4 position-relative">
+                        <label class="form-label text-muted small">جستجوی کاربر (نام یا موبایل)</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="fa fa-search text-muted"></i></span>
+                            <input type="text" class="form-control border-start-0" id="user-search" placeholder="حداقل ۳ حرف وارد کنید..." autocomplete="off">
+                        </div>
+                        <!-- لیست نتایج جستجو -->
+                        <div id="search-results"></div>
+
+                        <!-- نمایش کاربر انتخاب شده -->
+                        <div id="selected-user" class="d-none mt-2 p-2 bg-primary bg-opacity-10 border border-primary rounded-3 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-check-circle text-primary me-2"></i>
+                                <span id="selected-user-name" class="fw-bold text-dark small"></span>
+                            </div>
+                            <button type="button" class="btn btn-sm text-danger" id="btn-remove-selection">&times;</button>
+                        </div>
+                        <input type="hidden" id="staff-userId">
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label text-muted small">نقش در شعبه</label>
+                            <select class="form-select" id="staff-role">
+                                <option value="3">کارمند (Staff)</option>
+                                <option value="2">مدیر شعبه (BranchAdmin)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-muted small">تاریخ شروع</label>
+                            <!-- اینجا از input date ساده استفاده شده، می‌توانید از datepicker شمسی استفاده کنید -->
+                            <input type="date" class="form-control" id="staff-date">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">انصراف</button>
+                <button type="button" class="btn btn-primary" id="btn-save-staff" disabled>
+                    افزودن به شعبه
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/BranchAdmin/branch-staff.js"></script>
+}
