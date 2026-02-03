@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Apino.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96f4843d494b78a5c38c113890f2b966bc5e1c0c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90d69602c59022d0db67d624c26837d621074ff0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Apino.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Apino.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
