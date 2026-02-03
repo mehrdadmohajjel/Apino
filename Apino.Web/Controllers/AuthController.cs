@@ -4,6 +4,7 @@ using Apino.Application.Services.Auth;
 using Apino.Domain.Entities;
 using Apino.Domain.Enums;
 using Apino.Infrastructure.Data;
+using Apino.Infrastructure.Migrations;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity.Data;
@@ -55,6 +56,7 @@ namespace Apino.Web.Controllers
         public async Task<IActionResult> VerifyOtp([FromBody] VerifyOtpRequest request)
         {
             // 1. اعتبارسنجی OTP
+            long branchId = 0;
             await _otpService.VerifyAsync(request.Mobile, request.Code);
 
             // 2. پیدا / ساخت کاربر
@@ -99,6 +101,7 @@ namespace Apino.Web.Controllers
 
                 if (branchUser != null)
                     finalRole = branchUser.Role;
+                branchId = Convert.ToInt64(branchUser?.BranchId);
             }
             // 3. JWT (برای Ajax)
             var accessToken = _tokenService.GenerateAccessToken(user);
@@ -110,6 +113,7 @@ namespace Apino.Web.Controllers
         new Claim(ClaimTypes.MobilePhone, user.Mobile),
         new Claim(ClaimTypes.Role, finalRole.ToString())
     };
+                claims.Add(new Claim("BranchId", branchId.ToString()));
 
             var identity = new ClaimsIdentity(
                 claims,

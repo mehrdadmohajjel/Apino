@@ -11,7 +11,7 @@ namespace Apino.Application.Interfaces
     public interface IReadDbContext
     {
         DbSet<Branch> Branches { get; }
-        DbSet<ProductCategory> ProductCategories { get; }
+        DbSet<Domain.Entities.ProductCategory> ProductCategories { get; }
         DbSet<Product> Products { get; }
         DbSet<OtpCode> OtpCodes { get; }
         DbSet<Cart> Carts { get; }
@@ -23,6 +23,7 @@ namespace Apino.Application.Interfaces
         DbSet<User> Users { get; }
         DbSet<Notification> Notifications { get; }
         DbSet<BranchUser> BranchUsers { get; }
+        DbSet<ServiceType> ServiceTypes { get; }
         
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 

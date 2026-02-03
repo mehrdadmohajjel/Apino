@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "مدیریت دسته‌بندی محصولات";
+    Layout = "_BranchAdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="fs-5">دسته‌بندی‌ها</h4> <!-- فونت کوچکتر برای موبایل -->
+        <button class="btn btn-primary btn-sm" id="btn-add">
+            <i class="fa fa-plus"></i> <span class="d-none d-sm-inline">افزودن</span>
+        </button>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <!-- اضافه کردن کلاس table-responsive برای اسکرول در صورت نیاز -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle mb-0" id="tblCategories">
+                    <thead class="table-light text-nowrap">
+                        <tr>
+                            <th style="width: 60px;">تصویر</th>
+                            <th>عنوان</th>
+                            <!-- مخفی کردن در موبایل (d-none) و نمایش در تبلت به بالا (d-md-table-cell) -->
+                            <th class="d-none d-md-table-cell">Slug</th>
+                            <th class="d-none d-md-table-cell text-center">پرداخت در محل</th>
+                            <th class="text-center">وضعیت</th>
+                            <th style="min-width: 120px;" class="text-end pe-3">عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- توسط جاوااسکریپت پر می‌شود -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal همان کد قبلی باقی می‌ماند -->
+<div class="modal fade" id="catModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @await Html.PartialAsync("_Form")
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/BranchAdmin/product-categories.js"></script>
+}

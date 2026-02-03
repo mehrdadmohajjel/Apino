@@ -1,0 +1,65 @@
+﻿<div class="row g-3">
+    <!-- بخش تصویر -->
+    <div class="col-md-4 text-center mb-3 mb-md-0">
+        <div class="position-relative d-inline-block">
+            <img id="p-img-preview" src="/images/placeholder.png" class="rounded-3 border shadow-sm"
+                 style="width: 150px; height: 150px; object-fit: cover; background: #f8f9fa;" />
+            <label for="p-image" class="btn btn-sm btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-2" style="opacity: 0.9;">
+                <i class="fa fa-camera"></i> تغییر عکس
+            </label>
+            <input type="file" id="p-image" class="d-none" accept="image/*" onchange="previewImage(this)" />
+        </div>
+        <div class="text-muted small mt-2">فرمت‌های مجاز: jpg, png</div>
+    </div>
+
+    <!-- فیلدهای متنی -->
+    <div class="col-md-8">
+        <div class="row g-3">
+            <div class="col-12">
+                <label class="form-label text-muted small">عنوان محصول</label>
+                <input type="text" class="form-control" id="p-title" placeholder="مثلا: پیتزا مخصوص" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label text-muted small">دسته‌بندی</label>
+                <select class="form-select" id="p-category">
+                    <option value="">انتخاب کنید...</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label text-muted small">نوع خدمت</label>
+                <select class="form-select" id="p-serviceType">
+                    <option value="">انتخاب کنید...</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label text-muted small">قیمت (تومان)</label>
+                <input type="number" class="form-control" id="p-price" min="0" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label text-muted small">موجودی</label>
+                <input type="number" class="form-control" id="p-stock" min="0" value="100" required>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label text-muted small">توضیحات</label>
+                <textarea class="form-control" id="p-desc" rows="2"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('p-img-preview').src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Apino.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb9f8d1407bed2d405ac9ddcba3e1278debfcc2a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fa5af0241ccefd0b55f54ad82b04d6d06c28b6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Apino.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Apino.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

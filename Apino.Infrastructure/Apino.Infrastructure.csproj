@@ -20,7 +20,6 @@
 	<ItemGroup>
 	  <Folder Include="JWT\" />
 	  <Folder Include="SMS\" />
-	  <Folder Include="PaymentGateways\" />
 	  <Folder Include="Repositories\" />
 	</ItemGroup>
 	<ItemGroup>
