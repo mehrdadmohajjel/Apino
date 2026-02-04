@@ -1,6 +1,8 @@
-﻿using Apino.Application.Dtos.Cart;
+﻿using Apino.Application.Common.Helper;
+using Apino.Application.Dtos.Cart;
 using Apino.Application.Dtos.Order;
 using Apino.Application.Interfaces;
+using Apino.Application.Services.Auth;
 using Apino.Application.Services.Cart;
 using Apino.Domain.Entities;
 using Apino.Domain.Enums;
@@ -21,13 +23,15 @@ namespace Apino.Application.Services.Order
         private readonly ICartService _cartService;
         private readonly IToolsService _tools;
         private readonly IConfiguration _config;
+        private readonly ISmsSender _sms;
 
-        public OrderService(IReadDbContext db, ICartService cartService, IToolsService tools, IConfiguration config)
+        public OrderService(IReadDbContext db, ICartService cartService, IToolsService tools, IConfiguration config,ISmsSender sms)
         {
             _db = db;
             _cartService = cartService;
             _tools = tools;
             _config = config;
+            _sms = sms;
         }
 
         public async Task<long> CreateFromCartAsync(long userId, long branchId)
@@ -237,6 +241,145 @@ namespace Apino.Application.Services.Order
 
             await _db.SaveChangesAsync();
             await tx.CommitAsync();
+        }
+        //=============================
+        //سفارذشات شعبه
+        //=============================
+        public async Task<List<BranchOrderListDto>> GetOrdersAsync(long branchId)
+        {
+            // فقط سفارشاتی که پرداخت شده‌اند یا جلوتر هستند (StatusId >= 2)
+            var orders = await _db.Orders
+                .Include(o => o.User)
+                .ThenInclude(u => u.UserProfile)
+                .Include(o => o.Statuses)
+                .ThenInclude(s => s.StatusType)
+                .Where(o => o.BranchId == branchId && o.CurrentStatusTypeId >= 2)
+                .OrderByDescending(o => o.Id)
+                .ToListAsync();
+
+            return orders.Select(o =>
+            {
+                var nextStatus = GetNextStatus(o.CurrentStatusTypeId);
+                return new BranchOrderListDto
+                {
+                    Id = o.Id,
+                    OrderNumber = o.OrderNumber,
+                    CustomerName = o.User.UserProfile?.FullName ?? "کاربر مهمان",
+                    CustomerMobile = o.User.Mobile,
+                    TotalAmount = o.TotalAmount,
+                    CreateDate = PersianDateHelper.ToShamsi(o.CreationDate),
+                    StatusId = o.CurrentStatusTypeId,
+                    StatusTitle = o.Statuses.FirstOrDefault(s => s.IsActive)?.StatusType?.ShowName ?? "-",
+
+                    // تعیین دکمه بعدی
+                    NextStatusId = nextStatus.Id,
+                    NextStatusTitle = nextStatus.Title,
+                    IsFinished = o.CurrentStatusTypeId == 8 || o.CurrentStatusTypeId == 6 // تحویل شده یا لغو شده
+                };
+            }).ToList();
+        }
+
+        public async Task ChangeStatusAsync(long orderId, long branchId, long userId)
+        {
+            var order = await _db.Orders
+                .Include(o => o.User) // برای موبایل مشتری
+                .Include(o => o.Statuses)
+                .FirstOrDefaultAsync(o => o.Id == orderId && o.BranchId == branchId);
+
+            if (order == null) throw new Exception("سفارش یافت نشد.");
+
+            // پیدا کردن BranchUserId کسی که لاگین کرده
+            var branchUser = await _db.BranchUsers
+                .FirstOrDefaultAsync(bu => bu.BranchId == branchId && bu.UserId == userId);
+
+            if (branchUser == null) throw new Exception("شما دسترسی لازم در این شعبه را ندارید.");
+
+            // تعیین وضعیت بعدی بر اساس وضعیت فعلی
+            var nextStatusInfo = GetNextStatus(order.CurrentStatusTypeId);
+            if (nextStatusInfo.Id == 0) throw new Exception("تغییر وضعیت برای این مرحله امکان‌پذیر نیست.");
+
+            long newStatusId = nextStatusInfo.Id;
+
+            // 1. غیرفعال کردن وضعیت قبلی
+            var oldStatus = order.Statuses.FirstOrDefault(s => s.IsActive);
+            if (oldStatus != null) oldStatus.IsActive = false;
+
+            // 2. افزودن وضعیت جدید
+            var newStatus = new OrderStatus
+            {
+                OrderId = order.Id,
+                StatusTypeId = newStatusId,
+                BranchUserId = branchUser.Id, // ذخیره شناسه کارمند
+                IsActive = true,
+                CreationDateTime = DateTime.Now
+            };
+            _db.OrderStatuses.Add(newStatus);
+
+            // 3. آپدیت خود سفارش
+            order.CurrentStatusTypeId = newStatusId;
+
+            await _db.SaveChangesAsync();
+
+            // 4. ارسال پیامک (غیرهمزمان برای جلوگیری از کندی)
+            _ = SendNotificationsAsync(order, branchId, newStatusId);
+        }
+
+        // منطق توالی وضعیت‌ها
+        private (long Id, string Title) GetNextStatus(long currentId)
+        {
+            return currentId switch
+            {
+                2 => (3, "قبول سفارش"),         // Paid -> Accepted
+                3 => (4, "شروع آماده‌سازی"),   // Accepted -> Preparing
+                4 => (5, "آماده تحویل"),       // Preparing -> Done
+                5 => (8, "تحویل به مشتری"),    // Done -> Delivered
+                _ => (0, "")                   // پایان یا نامعتبر
+            };
+        }
+
+        // مدیریت ارسال پیامک‌ها
+        private async Task SendNotificationsAsync(Domain.Entities.Order order, long branchId, long statusId)
+        {
+            try
+            {
+                // متن پیامک بر اساس وضعیت
+                string message = statusId switch
+                {
+                    3 => $"سفارش {order.OrderNumber} توسط شعبه تایید شد و در نوبت قرار گرفت.",
+                    4 => $"سفارش {order.OrderNumber} در حال آماده‌سازی است.",
+                    5 => $"سفارش {order.OrderNumber} آماده تحویل است. لطفاً مراجعه فرمایید.",
+                    8 => $"سفارش {order.OrderNumber} تحویل داده شد. از خرید شما سپاسگزاریم.",
+                    _ => ""
+                };
+
+                if (string.IsNullOrEmpty(message)) return;
+
+                // 1. ارسال به مشتری
+                await _sms.SendAsync(order.User.Mobile, message);
+
+                // 2. ارسال به مدیر شعبه (BranchAdmin)
+                var branchAdminMobile = await _db.BranchUsers
+                    .Include(bu => bu.User)
+                    .Where(bu => bu.BranchId == branchId && bu.Role == UserRole.BranchAdmin && bu.IsActive)
+                    .Select(bu => bu.User.Mobile)
+                    .FirstOrDefaultAsync();
+
+                if (!string.IsNullOrEmpty(branchAdminMobile))
+                {
+                    string adminMsg = $"مدیر گرامی، وضعیت سفارش {order.OrderNumber} به '{GetStatusName(statusId)}' تغییر یافت.";
+                    await _sms.SendAsync(branchAdminMobile, adminMsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                // لاگ کردن خطا - نباید پروسه اصلی را متوقف کند
+                Console.WriteLine($"SMS Error: {ex.Message}");
+            }
+        }
+
+        private string GetStatusName(long id)
+        {
+            return id switch { 3 => "تایید شده", 4 => "در حال آماده‌سازی", 5 => "آماده تحویل", 8 => "تحویل شده", _ => "" };
         }
 
 

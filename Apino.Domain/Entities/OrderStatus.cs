@@ -12,12 +12,15 @@ namespace Apino.Domain.Entities
         public long OrderId { get; set; }
         public long StatusTypeId { get; set; }
         public long PaymentTypeId { get; set; }
+        public long? BranchUserId { get; set; }
 
         public bool IsActive { get; set; }
         public DateTime CreationDateTime { get; set; }
 
         public Order Order { get; set; }
         public OrderStatusType StatusType { get; set; }
+        public BranchUser BranchUser { get; set; }
+
     }
 
 }

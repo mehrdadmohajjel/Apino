@@ -3,32 +3,136 @@
   "WorkspaceRootPath": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\wwwroot\\js\\shop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\wwwroot\\js\\shop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Infrastructure\\Migrations\\20260204120418_ordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Apino.Infrastructure\\Migrations\\20260204120418_ordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{841C084F-4D74-4D9F-AD3C-8081A1886F55}|Apino.Infrastructure\\Apino.Infrastructure.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.infrastructure\\data\\seeds\\orderstatustypeseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{841C084F-4D74-4D9F-AD3C-8081A1886F55}|Apino.Infrastructure\\Apino.Infrastructure.csproj|solutionrelative:apino.infrastructure\\data\\seeds\\orderstatustypeseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\cart\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\cart\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\areas\\branchadmin\\views\\shared\\components\\branchadminmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\areas\\branchadmin\\views\\shared\\components\\branchadminmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\areas\\branchadmin\\controllers\\branchorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\areas\\branchadmin\\controllers\\branchorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\cart\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\cart\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\areas\\branchadmin\\controllers\\branchproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\areas\\branchadmin\\controllers\\branchproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\claimsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\claimsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\views\\shared\\components\\topmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\views\\shared\\components\\topmenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\wwwroot\\js\\branchadmin\\branchorder.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\wwwroot\\js\\branchadmin\\branchorder.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\areas\\branchadmin\\views\\branchproduct\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\areas\\branchadmin\\views\\branchproduct\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\dtos\\order\\branchorderlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\dtos\\order\\branchorderlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\order\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\order\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.domain\\entities\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|solutionrelative:apino.domain\\entities\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|solutionrelative:apino.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{841C084F-4D74-4D9F-AD3C-8081A1886F55}|Apino.Infrastructure\\Apino.Infrastructure.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.infrastructure\\messaging\\kavenegarsmssender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{841C084F-4D74-4D9F-AD3C-8081A1886F55}|Apino.Infrastructure\\Apino.Infrastructure.csproj|solutionrelative:apino.infrastructure\\messaging\\kavenegarsmssender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.domain\\entities\\branchuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|solutionrelative:apino.domain\\entities\\branchuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.domain\\entities\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|solutionrelative:apino.domain\\entities\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\areas\\branchadmin\\controllers\\branchstaffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\areas\\branchadmin\\controllers\\branchstaffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\areas\\branchadmin\\views\\branchstaff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\areas\\branchadmin\\views\\branchstaff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\branchstaff\\branchstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\branchstaff\\branchstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\wwwroot\\js\\branchadmin\\branch-staff.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\wwwroot\\js\\branchadmin\\branch-staff.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\branchstaff\\ibranchstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\branchstaff\\ibranchstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\dtos\\branchstaff\\addstaffvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\dtos\\branchstaff\\addstaffvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\dtos\\branchstaff\\usersearchresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\dtos\\branchstaff\\usersearchresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\dtos\\branchstaff\\branchstafflistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\dtos\\branchstaff\\branchstafflistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.domain\\entities\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|solutionrelative:apino.domain\\entities\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.domain\\entities\\branchstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|solutionrelative:apino.domain\\entities\\branchstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC29C126-94A8-4CCC-898E-ADA8E64CD21B}|Apino.Domain\\Apino.Domain.csproj|solutionrelative:apino.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.web\\wwwroot\\js\\branchadmin\\branch-products.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7B7343E2-EA2D-4EEA-A1AD-53279580CED1}|Apino.Web\\Apino.Web.csproj|solutionrelative:apino.web\\wwwroot\\js\\branchadmin\\branch-products.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\products\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\products\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\services\\products\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\services\\products\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|c:\\users\\mehrdad\\desktop\\new apino\\apino\\apino\\apino.application\\common\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D5BEC0A-C0F6-4AC0-B837-6525A33A044E}|Apino.Application\\Apino.Application.csproj|solutionrelative:apino.application\\common\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,98 +142,421 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Cart\\Index.cshtml",
-              "RelativeDocumentMoniker": "Apino.Web\\Views\\Cart\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Cart\\Index.cshtml",
-              "RelativeToolTip": "Apino.Web\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAUwJEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-30T14:39:50.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CartService.cs",
-              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\CartService.cs",
-              "RelativeDocumentMoniker": "Apino.Application\\Services\\Cart\\CartService.cs",
-              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\CartService.cs",
-              "RelativeToolTip": "Apino.Application\\Services\\Cart\\CartService.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAtwE4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T14:38:27.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "Apino.Web\\wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "Apino.Web\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAowGgAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-01-30T14:34:06.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
-              "RelativeDocumentMoniker": "Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
-              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
-              "RelativeToolTip": "Apino.Web\\Views\\Shared\\Components\\TopMenu\\Default.cshtml",
-              "ViewState": "AgIAABcAAAAAAAAAAAAYwCIAAACJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-30T14:33:44.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICartService.cs",
-              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\ICartService.cs",
-              "RelativeDocumentMoniker": "Apino.Application\\Services\\Cart\\ICartService.cs",
-              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Cart\\ICartService.cs",
-              "RelativeToolTip": "Apino.Application\\Services\\Cart\\ICartService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T14:30:10.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "shop.js",
-              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\shop.js",
-              "RelativeDocumentMoniker": "Apino.Web\\wwwroot\\js\\shop.js",
-              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\shop.js",
-              "RelativeToolTip": "Apino.Web\\wwwroot\\js\\shop.js",
-              "ViewState": "AgIAAJ8AAAAAAAAAAADwv8IAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-01-30T14:25:45.028Z",
+              "Title": "20260204120418_ordertable.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Infrastructure\\Migrations\\20260204120418_ordertable.cs",
+              "RelativeDocumentMoniker": "Apino.Infrastructure\\Migrations\\20260204120418_ordertable.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Infrastructure\\Migrations\\20260204120418_ordertable.cs",
+              "RelativeToolTip": "Apino.Infrastructure\\Migrations\\20260204120418_ordertable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T12:04:18.61Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "Apino.Web\\Controllers\\CartController.cs",
-              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Controllers\\CartController.cs",
-              "RelativeToolTip": "Apino.Web\\Controllers\\CartController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAwwC0AAAAJAAAAAAAAAA==",
+              "Title": "OrderStatusTypeSeed.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Infrastructure\\Data\\Seeds\\OrderStatusTypeSeed.cs",
+              "RelativeDocumentMoniker": "Apino.Infrastructure\\Data\\Seeds\\OrderStatusTypeSeed.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Infrastructure\\Data\\Seeds\\OrderStatusTypeSeed.cs",
+              "RelativeToolTip": "Apino.Infrastructure\\Data\\Seeds\\OrderStatusTypeSeed.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBMAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T22:13:37.182Z",
+              "WhenOpened": "2026-02-04T12:01:02.312Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClaimsExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\ClaimsExtensions.cs",
+              "RelativeDocumentMoniker": "Apino.Web\\ClaimsExtensions.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\ClaimsExtensions.cs",
+              "RelativeToolTip": "Apino.Web\\ClaimsExtensions.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T11:48:16.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "branchorder.js",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\BranchAdmin\\branchorder.js",
+              "RelativeDocumentMoniker": "Apino.Web\\wwwroot\\js\\BranchAdmin\\branchorder.js",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\BranchAdmin\\branchorder.js",
+              "RelativeToolTip": "Apino.Web\\wwwroot\\js\\BranchAdmin\\branchorder.js",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAAwKwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-04T11:47:39.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BranchOrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchOrdersController.cs",
+              "RelativeDocumentMoniker": "Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchOrdersController.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchOrdersController.cs",
+              "RelativeToolTip": "Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchOrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T11:04:40.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Order\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\Order\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Order\\IOrderService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\Order\\IOrderService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAmwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T11:01:11.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BranchOrderListDto.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\Order\\BranchOrderListDto.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Dtos\\Order\\BranchOrderListDto.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\Order\\BranchOrderListDto.cs",
+              "RelativeToolTip": "Apino.Application\\Dtos\\Order\\BranchOrderListDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAiwBgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T11:00:36.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BranchProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchProductController.cs",
+              "RelativeDocumentMoniker": "Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchProductController.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchProductController.cs",
+              "RelativeToolTip": "Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchProductController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T21:52:55.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Views\\Shared\\Components\\BranchAdminMenu\\Default.cshtml",
+              "RelativeDocumentMoniker": "Apino.Web\\Areas\\BranchAdmin\\Views\\Shared\\Components\\BranchAdminMenu\\Default.cshtml",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Views\\Shared\\Components\\BranchAdminMenu\\Default.cshtml",
+              "RelativeToolTip": "Apino.Web\\Areas\\BranchAdmin\\Views\\Shared\\Components\\BranchAdminMenu\\Default.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAD8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-03T22:01:00.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Order\\OrderService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\Order\\OrderService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Order\\OrderService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\Order\\OrderService.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAIwFQBAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T11:01:30.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Apino.Web\\Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Apino.Web\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAAHQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T10:48:52.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "Apino.Domain\\Entities\\OrderStatus.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\OrderStatus.cs",
+              "RelativeToolTip": "Apino.Domain\\Entities\\OrderStatus.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T10:36:00.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Views\\BranchProduct\\Index.cshtml",
+              "RelativeDocumentMoniker": "Apino.Web\\Areas\\BranchAdmin\\Views\\BranchProduct\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Views\\BranchProduct\\Index.cshtml",
+              "RelativeToolTip": "Apino.Web\\Areas\\BranchAdmin\\Views\\BranchProduct\\Index.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvzcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-03T22:10:37.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "KavenegarSmsSender.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Infrastructure\\Messaging\\KavenegarSmsSender.cs",
+              "RelativeDocumentMoniker": "Apino.Infrastructure\\Messaging\\KavenegarSmsSender.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Infrastructure\\Messaging\\KavenegarSmsSender.cs",
+              "RelativeToolTip": "Apino.Infrastructure\\Messaging\\KavenegarSmsSender.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T10:48:37.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "Apino.Domain\\Entities\\OrderDetail.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\OrderDetail.cs",
+              "RelativeToolTip": "Apino.Domain\\Entities\\OrderDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T10:35:44.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Apino.Domain\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\Order.cs",
+              "RelativeToolTip": "Apino.Domain\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T10:35:31.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IBranchStaffService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\BranchStaff\\IBranchStaffService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\BranchStaff\\IBranchStaffService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\BranchStaff\\IBranchStaffService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\BranchStaff\\IBranchStaffService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T23:14:44.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AddStaffVm.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\BranchStaff\\AddStaffVm.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Dtos\\BranchStaff\\AddStaffVm.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\BranchStaff\\AddStaffVm.cs",
+              "RelativeToolTip": "Apino.Application\\Dtos\\BranchStaff\\AddStaffVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T23:11:00.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserSearchResultDto.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\BranchStaff\\UserSearchResultDto.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Dtos\\BranchStaff\\UserSearchResultDto.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\BranchStaff\\UserSearchResultDto.cs",
+              "RelativeToolTip": "Apino.Application\\Dtos\\BranchStaff\\UserSearchResultDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T23:10:45.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Program.cs",
+              "RelativeDocumentMoniker": "Apino.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Program.cs",
+              "RelativeToolTip": "Apino.Web\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAiwCYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T20:54:17.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BranchStaffService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\BranchStaff\\BranchStaffService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\BranchStaff\\BranchStaffService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\BranchStaff\\BranchStaffService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\BranchStaff\\BranchStaffService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwCcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T23:15:26.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BranchUser.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\BranchUser.cs",
+              "RelativeDocumentMoniker": "Apino.Domain\\Entities\\BranchUser.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\BranchUser.cs",
+              "RelativeToolTip": "Apino.Domain\\Entities\\BranchUser.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T22:59:12.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "BranchStaffController.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchStaffController.cs",
+              "RelativeDocumentMoniker": "Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchStaffController.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchStaffController.cs",
+              "RelativeToolTip": "Apino.Web\\Areas\\BranchAdmin\\Controllers\\BranchStaffController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T23:17:00.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Views\\BranchStaff\\Index.cshtml",
+              "RelativeDocumentMoniker": "Apino.Web\\Areas\\BranchAdmin\\Views\\BranchStaff\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\Areas\\BranchAdmin\\Views\\BranchStaff\\Index.cshtml",
+              "RelativeToolTip": "Apino.Web\\Areas\\BranchAdmin\\Views\\BranchStaff\\Index.cshtml",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAIAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-03T23:17:47.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "branch-staff.js",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-staff.js",
+              "RelativeDocumentMoniker": "Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-staff.js",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-staff.js",
+              "RelativeToolTip": "Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-staff.js",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAwwKkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-03T23:18:50.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "BranchStaffListDto.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\BranchStaff\\BranchStaffListDto.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Dtos\\BranchStaff\\BranchStaffListDto.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Dtos\\BranchStaff\\BranchStaffListDto.cs",
+              "RelativeToolTip": "Apino.Application\\Dtos\\BranchStaff\\BranchStaffListDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T23:07:10.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "BranchStaff.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\BranchStaff.cs",
+              "RelativeDocumentMoniker": "Apino.Domain\\Entities\\BranchStaff.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\BranchStaff.cs",
+              "RelativeToolTip": "Apino.Domain\\Entities\\BranchStaff.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T22:59:41.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\UserProfile.cs",
+              "RelativeDocumentMoniker": "Apino.Domain\\Entities\\UserProfile.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\UserProfile.cs",
+              "RelativeToolTip": "Apino.Domain\\Entities\\UserProfile.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T22:58:47.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Apino.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Apino.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T22:58:36.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "branch-products.js",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-products.js",
+              "RelativeDocumentMoniker": "Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-products.js",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-products.js",
+              "RelativeToolTip": "Apino.Web\\wwwroot\\js\\BranchAdmin\\branch-products.js",
+              "ViewState": "AgIAAHIAAAAAAAAAAADwv4YAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-03T22:11:31.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Products\\ProductService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\Products\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Products\\ProductService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\Products\\ProductService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAADwv0gAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T22:09:37.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Common\\PagedResult.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Common\\PagedResult.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Common\\PagedResult.cs",
+              "RelativeToolTip": "Apino.Application\\Common\\PagedResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T22:08:57.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Products\\IProductService.cs",
+              "RelativeDocumentMoniker": "Apino.Application\\Services\\Products\\IProductService.cs",
+              "ToolTip": "C:\\Users\\Mehrdad\\Desktop\\New Apino\\Apino\\Apino\\Apino.Application\\Services\\Products\\IProductService.cs",
+              "RelativeToolTip": "Apino.Application\\Services\\Products\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T21:49:46.36Z"
             }
           ]
         }

@@ -17,6 +17,10 @@ namespace Apino.Application.Services.Order
         Task MarkAsPaidAsync(long orderId, string transactionCode);
         Task DecreaseProductStockAsync(long orderId);
 
+        Task<List<BranchOrderListDto>> GetOrdersAsync(long branchId);
+        Task ChangeStatusAsync(long orderId, long branchId, long userId);
+
+
 
     }
 }
