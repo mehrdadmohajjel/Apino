@@ -24,6 +24,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnJhbmNoQWRtaW5cVmlld3NcQnJhbmNoT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Mehrdad/Desktop/New Apino/Apino/Apino/Apino.Web/Areas/BranchAdmin/Views/BranchPaymentReports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnJhbmNoQWRtaW5cVmlld3NcQnJhbmNoUGF5bWVudFJlcG9ydHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Mehrdad/Desktop/New Apino/Apino/Apino/Apino.Web/Areas/BranchAdmin/Views/BranchProduct/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnJhbmNoQWRtaW5cVmlld3NcQnJhbmNoUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

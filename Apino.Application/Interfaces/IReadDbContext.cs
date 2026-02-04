@@ -24,6 +24,7 @@ namespace Apino.Application.Interfaces
         DbSet<Notification> Notifications { get; }
         DbSet<BranchUser> BranchUsers { get; }
         DbSet<ServiceType> ServiceTypes { get; }
+        DbSet<Payment> Payments { get; }
         
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 

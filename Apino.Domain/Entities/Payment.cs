@@ -14,6 +14,7 @@ namespace Apino.Domain.Entities
         public decimal Amount { get; set; }
         public PaymentMethod Method { get; set; } // Online, Wallet, PayAtPlace
         public PaymentStatus Status { get; set; }
+        public Order Orders { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

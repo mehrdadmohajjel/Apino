@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "گزارش پرداخت‌ها";
+}
+
+<!-- استایل‌های اختصاصی صفحه -->
+<style>
+    /* برای اینکه تقویم زیر هدر یا منوها نرود */
+    jdp-container {
+        z-index: 9999 !important;
+    }
+
+    .loading-spinner {
+        display: none;
+        text-align: center;
+        padding: 20px;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">گزارش تراکنش‌های شعبه</h3>
+    </div>
+    <div class="card-body">
+        <!-- بخش فیلترها -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <label>از تاریخ:</label>
+                <!-- اتریبیوت data-jdp باعث شناسایی توسط کتابخانه می‌شود -->
+                <input type="text" id="fromDate" class="form-control" data-jdp placeholder="انتخاب تاریخ" value="@ViewBag.TodayDate" autocomplete="off" />
+            </div>
+            <div class="col-md-3">
+                <label>تا تاریخ:</label>
+                <input type="text" id="toDate" class="form-control" data-jdp placeholder="انتخاب تاریخ" value="@ViewBag.TodayDate" autocomplete="off" />
+            </div>
+            <div class="col-md-2 align-self-end">
+                <button id="btnFilter" class="btn btn-primary w-100">
+                    <i class="fa fa-search"></i> نمایش
+                </button>
+            </div>
+        </div>
+
+        <!-- جدول نتایج -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="paymentsTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>نام کاربر</th>
+                        <th>مبلغ (تومان)</th>
+                        <th>تاریخ پرداخت</th>
+                        <th>وضعیت</th>
+                        <th>کد پیگیری</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سطرها توسط جاوااسکریپت پر می‌شوند -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- لودینگ -->
+        <div class="loading-spinner" id="loader">
+            <i class="fa fa-spinner fa-spin fa-2x"></i>
+            <p>در حال بارگذاری...</p>
+        </div>
+
+        <!-- صفحه‌بندی -->
+        <div id="paginationContainer" class="d-flex justify-content-center mt-3"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/branchadmin/paymentReport.js"></script>
+    <!-- 2. اسکریپت منطق صفحه -->
+}
